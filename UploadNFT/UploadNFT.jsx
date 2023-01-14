@@ -11,9 +11,9 @@ import Style from "./Upload.module.css";
 import formStyle from "../AccountPage/Form/Form.module.css";
 import images from "../img";
 import { Button } from "../components/componentsindex.js";
-import { DropZone } from "../UploadNFT/uploadNFTIndex.js";
+import { DropZone } from "./uploadNFTIndex.js";
 
-const UloadNFT = ({ uploadToIPFS, createNFT }) => {
+const UploadNFT = ({ uploadToIPFS, createNFT }) => {
   const [price, setPrice] = useState("");
   const [active, setActive] = useState(0);
   const [name, setName] = useState("");
@@ -76,7 +76,7 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
           <label htmlFor="nft">Item Name</label>
           <input
             type="text"
-            placeholder="shoaib bhai"
+            placeholder="Enter the name of the item"
             className={formStyle.Form_box_input_userName}
             onChange={(e) => setName(e.target.value)}
           />
@@ -97,9 +97,8 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
           </div>
 
           <p className={Style.upload_box_input_para}>
-            Ciscrypt will include a link to this URL on this item's detail page,
-            so that users can click to learn more about it. You are welcome to
-            link to your own webpage with more details.
+            Cyclone will include a link to the HTTP so that users can clink on
+            it to learn more about the items with details
           </p>
         </div>
 
@@ -220,6 +219,7 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
                 image,
                 description,
                 router
+                // TODO: COMMENT THE CODE BELOW
                 // website,
                 // royalties,
                 // fileSize,
@@ -240,4 +240,4 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
   );
 };
 
-export default UloadNFT;
+export default UploadNFT;

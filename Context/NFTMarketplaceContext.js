@@ -5,29 +5,24 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 
-// This should already be declared in your API file
-
-// const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
-
-const projectId = "your id";
-const projectSecretKey = "your key";
+const projectId = "2KHfZsYP1zBOVsSZZYx4VJ9qzR0";
+const projectSecretKey = "355244ba91064d11370befe1297ef660";
 const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
   "base64"
 )}`;
 
-const subdomain = "infura-ipfs.io";
+const subdomain = "https://cyclone-nft-marketplace.infura-ipfs.io";
 
 // TODO: CLIENT EDIT
 
-const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
-// const client = ipfsHttpClient({
-//   host: "infura-ipfs.io",
-//   port: 5001,
-//   protocol: "https",
-//   headers: {
-//     authorization: auth,
-//   },
-// });
+const client = ipfsHttpClient({
+  host: "infura-ipfs.io",
+  port: 5001,
+  protocol: "https",
+  headers: {
+    authorization: auth,
+  },
+});
 
 //INTERNAL  IMPORT
 import {
@@ -138,23 +133,42 @@ export const NFTMarketplaceProvider = ({ children }) => {
   const uploadToIPFS = async (file) => {
     try {
       const added = await client.add({ content: file });
-      //TODO: CHANGE SUBDOMAIN
-      // const url = `${subdomain}/ipfs/${added.path}`;
-      const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+
+      const url = `${subdomain}/ipfs/${added.path}`;
+
       return url;
     } catch (error) {
-      setError("Error Uploading to IPFS");
-      setOpenError(true);
+      // setError("Error Uploading to IPFS");
+      // setOpenError(true);
+      console.log("Erro uploading to IPFS");
     }
   };
 
   //---CREATENFT FUNCTION
-  const createNFT = async (formInput, fileUrl, router) => {
-    const { name, description, price } = formInput;
-    if (!name || !description || !price || !fileUrl)
-      return console.log("Data is Missing");
+  // const createNFT = async (formInput, fileUrl, router) => {
+  //   const { name, description, price } = formInput;
+  //   if (!name || !description || !price || !fileUrl)
+  //     return console.log("Data is Missing");
 
-    const data = JSON.stringify({ name, description, image: fileUrl });
+  //   const data = JSON.stringify({ name, description, image: fileUrl });
+
+  //   try {
+  //     const added = await client.add(data);
+
+  //     const url = `https://infura-ipfs.io/ipfs/${added.path}`;
+
+  //     await createSale(url, price);
+  //     // router.push("/searchPage");
+  //   } catch (error) {
+  //     console.log("Error whole creating NFT");
+  //   }
+  // };
+
+  const createNFT = async (name, price, image, description, router) => {
+    if (!name || !description || !price || !image)
+      return setError("Data Is Missing"), setOpenError(true);
+
+    const data = JSON.stringify({ name, description, image });
 
     try {
       const added = await client.add(data);
@@ -164,28 +178,10 @@ export const NFTMarketplaceProvider = ({ children }) => {
       await createSale(url, price);
       // router.push("/searchPage");
     } catch (error) {
-      console.log("Error whole creating NFT");
+      setError("Error while creating NFT");
+      setOpenError(true);
     }
   };
-
-  // const createNFT = async (name, price, image, description, router) => {
-  //   if (!name || !description || !price || !image)
-  //     return setError("Data Is Missing"), setOpenError(true);
-
-  //   const data = JSON.stringify({ name, description, image });
-
-  //   try {
-  //     const added = await client.add(data);
-
-  //     const url = `https://infura-ipfs.io/ipfs/${added.path}`;
-
-  //     await createSale(url, price);
-  //     router.push("/searchPage");
-  //   } catch (error) {
-  //     setError("Error while creating NFT");
-  //     setOpenError(true);
-  //   }
-  // };
 
   //--- createSale FUNCTION
   const createSale = async (url, formInputPrice, isReselling, id) => {
