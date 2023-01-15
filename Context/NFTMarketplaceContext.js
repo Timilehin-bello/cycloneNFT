@@ -176,7 +176,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const url = `https://infura-ipfs.io/ipfs/${added.path}`;
 
       await createSale(url, price);
-      // router.push("/searchPage");
+      router.push("/searchPage");
     } catch (error) {
       setError("Error while creating NFT");
       setOpenError(true);
@@ -295,11 +295,11 @@ export const NFTMarketplaceProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   // if (currentAccount) {
-  //   fetchNFTs();
-  //   // }
-  // }, []);
+  useEffect(() => {
+    // if (currentAccount) {
+    fetchNFTs();
+    // }
+  }, []);
 
   //--FETCHING MY NFT OR LISTED NFTs
   const fetchMyNFTsOrListedNFTs = async (type) => {
