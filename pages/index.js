@@ -39,7 +39,6 @@ const Home = () => {
   useEffect(() => {
     // if (currentAccount) {
     fetchNFTs().then((items) => {
-      console.log(nfts);
       if (items == undefined) {
         return;
       }
@@ -60,19 +59,19 @@ const Home = () => {
       <HeroSection />
       <Service />
       <BigNFTSilder />
-      <Title
+      {/* <Title
         heading="Audio Collection"
         paragraph="Discover the most outstanding NFTs in all topics of life."
-      />
-      <AudioLive />
+      /> */}
+      {/* <AudioLive />
       {creators.length == 0 ? (
         <Loader />
       ) : (
         <FollowerTab TopCreator={creators} />
-      )}
-
-      <Slider />
-      <Collection />
+      )} */}
+      {/* 
+      <Slider /> */}
+      {/* <Collection /> */}
       <Title
         heading="Featured NFTs"
         paragraph="Discover the most outstanding NFTs in all topics of life."

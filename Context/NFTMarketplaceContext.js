@@ -239,7 +239,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
   const fetchNFTs = async () => {
     try {
-      // if (currentAccount
+      // if (currentAccountheroku
       // const web3Modal = new Web3Modal();
       // const connection = await web3Modal.connect();
       // const provider = new ethers.providers.Web3Provider(connection);) {
@@ -262,10 +262,18 @@ export const NFTMarketplaceProvider = ({ children }) => {
           async ({ tokenId, seller, owner, price: unformattedPrice }) => {
             const tokenURI = await contract.tokenURI(tokenId);
 
-            const {
-              data: { image, name, description },
-              // TODO: axios.get(tokenURI, {})
-            } = await axios.get(tokenURI, {});
+            const proxyUrl = "https://lit-citadel-42195.herokuapp.com/";
+
+            const response = await fetch(proxyUrl + tokenURI, {
+              headers: {
+                "X-Requested-With": "XMLHttpRequest",
+              },
+              responseType: "json",
+              withCredentials: true,
+            });
+
+            const { image, name, description } = await response.json();
+
             const price = ethers.utils.formatUnits(
               unformattedPrice.toString(),
               "ether"
