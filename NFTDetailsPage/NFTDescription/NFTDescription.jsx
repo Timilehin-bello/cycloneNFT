@@ -105,7 +105,7 @@ const NFTDescription = ({ nft }) => {
 
   //SMART CONTRACT DATA
   const { buyNFT, currentAccount } = useContext(NFTMarketplaceContext);
-
+  const proxyUrl = "https://lit-citadel-42195.herokuapp.com/";
   return (
     <div className={Style.NFTDescription}>
       <div className={Style.NFTDescription_box}>
@@ -261,14 +261,16 @@ const NFTDescription = ({ nft }) => {
             <div className={Style.NFTDescription_box_profile_biding_box_button}>
               {currentAccount == nft.seller?.toLowerCase() ? (
                 <p>You can't buy your own NFT</p>
-              ) : // TODO: ADDED ?
+              ) : // TODO: ADDED ? and proxy
               currentAccount == nft.owner?.toLowerCase() ? (
                 <Button
                   icon=<FaWallet />
                   btnName="List on Marketplace"
                   handleClick={() =>
                     router.push(
-                      `/reSellToken?id=${nft.tokenId}&tokenURI=${nft.tokenURI}&price=${nft.price}`
+                      `/reSellToken?id=${nft.tokenId}&tokenURI=${
+                        proxyUrl + nft.tokenURI
+                      }&price=${nft.price}`
                     )
                   }
                   classStyle={Style.button}

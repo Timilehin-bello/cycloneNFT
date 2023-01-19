@@ -12,6 +12,7 @@ const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
 )}`;
 
 const subdomain = "https://cyclone-nft-marketplace.infura-ipfs.io";
+const proxyUrl = "https://lit-citadel-42195.herokuapp.com/";
 
 // TODO: CLIENT EDIT
 
@@ -262,8 +263,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
           async ({ tokenId, seller, owner, price: unformattedPrice }) => {
             const tokenURI = await contract.tokenURI(tokenId);
 
-            const proxyUrl = "https://lit-citadel-42195.herokuapp.com/";
-
             const response = await fetch(proxyUrl + tokenURI, {
               headers: {
                 "X-Requested-With": "XMLHttpRequest",
@@ -312,50 +311,64 @@ export const NFTMarketplaceProvider = ({ children }) => {
   //--FETCHING MY NFT OR LISTED NFTs
   const fetchMyNFTsOrListedNFTs = async (type) => {
     try {
-      if (currentAccount) {
-        const contract = await connectingWithSmartContract();
+      // if (!currentAccount) {
+      console.log(currentAccount, "goo");
+      const contract = await connectingWithSmartContract();
 
-        const data =
-          type == "fetchItemsListed"
-            ? await contract.fetchItemsListed()
-            : await contract.fetchMyNFTs();
+      const data =
+        type == "fetchItemsListed"
+          ? await contract.fetchItemsListed()
+          : await contract.fetchMyNFTs();
 
-        const items = await Promise.all(
-          data.map(
-            async ({ tokenId, seller, owner, price: unformattedPrice }) => {
-              const tokenURI = await contract.tokenURI(tokenId);
-              const {
-                data: { image, name, description },
-              } = await axios.get(tokenURI);
-              const price = ethers.utils.formatUnits(
-                unformattedPrice.toString(),
-                "ether"
-              );
+      const items = await Promise.all(
+        data.map(
+          async ({ tokenId, seller, owner, price: unformattedPrice }) => {
+            const tokenURI = await contract.tokenURI(tokenId);
+            // const {
+            //   data: { image, name, description },
+            // } = await axios.get(tokenURI);
 
-              return {
-                price,
-                tokenId: tokenId.toNumber(),
-                seller,
-                owner,
-                image,
-                name,
-                description,
-                tokenURI,
-              };
-            }
-          )
-        );
-        return items;
-      }
+            const response = await fetch(proxyUrl + tokenURI, {
+              headers: {
+                "X-Requested-With": "XMLHttpRequest",
+              },
+              responseType: "json",
+              withCredentials: true,
+            });
+
+            const { image, name, description } = await response.json();
+
+            console.log("data", image, name, description);
+            const price = ethers.utils.formatUnits(
+              unformattedPrice.toString(),
+              "ether"
+            );
+
+            return {
+              price,
+              tokenId: tokenId.toNumber(),
+              seller,
+              owner,
+              image,
+              name,
+              description,
+              tokenURI,
+            };
+          }
+        )
+      );
+      return items;
+      // }
     } catch (error) {
       // setError("Error while fetching listed NFTs");
       // setOpenError(true);
+      console.log(error);
     }
   };
 
-  // useEffect(() => {
-  //   fetchMyNFTsOrListedNFTs();
-  // }, []);
+  useEffect(() => {
+    fetchMyNFTsOrListedNFTs("fetchItemsListed");
+  }, []);
 
   //---BUY NFTs FUNCTION
   const buyNFT = async (nft) => {
@@ -368,6 +381,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       });
 
       await transaction.wait();
+      router.push("/author");
     } catch (error) {
       console.log("Error While buying NFT");
     }
