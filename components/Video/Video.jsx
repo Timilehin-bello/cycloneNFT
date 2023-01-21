@@ -9,18 +9,17 @@ const Video = () => {
   return (
     <div className={Style.Video}>
       <div className={Style.Video_box}>
-        <h1>
-          <span>🎬</span> The Videos
-        </h1>
+        <h1>About Us</h1>
         <p>
-          Check out our hottest videos. View more and share more new
-          perspectives on just about any topic. Everyone’s welcome.
+          Cyclone strives to be the most trustworthy and secure marketplace for
+          NFTs. Finding and eliminating current vulnerabilities is a top
+          priority.
         </p>
 
         <div className={Style.Video_box_frame}>
           <div className={Style.Video_box_frame_left}>
             <Image
-              src={images.NFTVideo}
+              src={images.bg_nft}
               alt="Video image"
               width={1920}
               height={1080}
@@ -29,7 +28,7 @@ const Video = () => {
             />
           </div>
 
-          <div className={Style.Video_box_frame_right}>Hey</div>
+          <div className={Style.Video_box_frame_right}></div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
-import Discover from "./Discover/Discover";
-import HelpCenter from "./HelpCenter/HelpCenter";
+import Explore from "./Explore/Explore";
+import LearnMore from "./LearnMore/LearnMore";
 import Profile from "./Profile/Profile";
 import Notification from "./Notification/Notification";
 import SideBar from "./SideBar/SideBar";
 
-export { Discover, HelpCenter, Profile, Notification, SideBar };
+export { Explore, LearnMore, Profile, Notification, SideBar };

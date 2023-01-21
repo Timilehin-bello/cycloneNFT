@@ -59,6 +59,14 @@ const connectingWithSmartContract = async () => {
 
 export const NFTMarketplaceContext = React.createContext();
 
+const truncateString = (str, number) => {
+  if (str.length > number) {
+    return str.slice(0, number) + "...";
+  } else {
+    return str;
+  }
+};
+
 export const NFTMarketplaceProvider = ({ children }) => {
   const titleData = "Discover,Collect & Sell Popular";
 
@@ -312,7 +320,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
   const fetchMyNFTsOrListedNFTs = async (type) => {
     try {
       // if (!currentAccount) {
-      console.log(currentAccount, "goo");
       const contract = await connectingWithSmartContract();
 
       const data =
@@ -324,9 +331,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
         data.map(
           async ({ tokenId, seller, owner, price: unformattedPrice }) => {
             const tokenURI = await contract.tokenURI(tokenId);
-            // const {
-            //   data: { image, name, description },
-            // } = await axios.get(tokenURI);
 
             const response = await fetch(proxyUrl + tokenURI, {
               headers: {
@@ -338,7 +342,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
             const { image, name, description } = await response.json();
 
-            console.log("data", image, name, description);
             const price = ethers.utils.formatUnits(
               unformattedPrice.toString(),
               "ether"
@@ -523,6 +526,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
         accountBalance,
         transactionCount,
         transactions,
+        truncateString,
       }}
     >
       {children}

@@ -2,7 +2,7 @@
   width: 100%;
   padding-block: 1.5rem;
   position: relative;
-  z-index: 111111111;
+  z-index: 1;
 }
 
 .navbar_container {
@@ -51,14 +51,14 @@
 /* //-------RIGHT */
 
 .navbar_container_right {
-  display: grid;
-  grid-template-columns: 1fr 1fr 0.5fr 1fr 0.3fr;
+  display: flex;
+
+  justify-content: space-between;
   gap: 1rem;
   align-items: center;
-  /* align-self: flex-end; */
 }
 
-.navbar_container_right_discover {
+.navbar_container_right_explore {
   position: relative;
   cursor: pointer;
 }
@@ -67,7 +67,7 @@
   cursor: pointer;
 }
 
-.navbar_container_right_discover_box,
+.navbar_container_right_explore_box,
 .navbar_container_right_help_box {
   position: absolute;
   padding: 1rem 0.5rem;
@@ -148,7 +148,7 @@
   .navbar_container_left_box_input_box {
     display: none;
   }
-  .navbar_container_right_discover {
+  .navbar_container_right_explore {
     display: none;
   }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { BsImages } from "react-icons/bs";
 import Image from "next/image";
@@ -7,20 +7,10 @@ import Link from "next/link";
 //INTERNAL IMPORT
 import Style from "./NFTCard.module.css";
 import images from "../../img";
+import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
 
 const NFTCard = ({ NFTData }) => {
-  // const CardArray = [
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  //   images.nft_image_3,
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  //   images.nft_image_3,
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  //   images.nft_image_3,
-  // ];
-
+  const { truncateString } = useContext(NFTMarketplaceContext);
   const [like, setLike] = useState(true);
 
   const likeNft = () => {
@@ -31,7 +21,6 @@ const NFTCard = ({ NFTData }) => {
     }
   };
 
-  // console.log(NFTData);
   return (
     <div className={Style.NFTCard}>
       {NFTData.map((el, i) => (
@@ -60,23 +49,20 @@ const NFTCard = ({ NFTData }) => {
                       className={Style.NFTCard_box_update_left_like_icon}
                     />
                   )}
-                  {""} 22
                 </div>
               </div>
 
-              <div className={Style.NFTCard_box_update_right}>
-                <div className={Style.NFTCard_box_update_right_info}>
-                  <small>Remaining time</small>
-                  <p>3h : 15m : 20s</p>
-                </div>
-              </div>
+              {/* <div className={Style.NFTCard_box_update_right}>
+                <div className={Style.NFTCard_box_update_right_info}></div>
+              </div> */}
             </div>
 
             <div className={Style.NFTCard_box_update_details}>
               <div className={Style.NFTCard_box_update_details_price}>
                 <div className={Style.NFTCard_box_update_details_price_box}>
                   <h4>
-                    {el.name} #{el.tokenId}
+                    {/* TODO: TRUNCATE */}
+                    {truncateString(el.name, 3)} #{el.tokenId}
                   </h4>
 
                   <div
@@ -92,9 +78,7 @@ const NFTCard = ({ NFTData }) => {
                       className={
                         Style.NFTCard_box_update_details_price_box_stock
                       }
-                    >
-                      <small>61 in stock</small>
-                    </div>
+                    ></div>
                   </div>
                 </div>
               </div>

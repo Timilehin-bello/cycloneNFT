@@ -31,7 +31,7 @@ const HeroSection = () => {
             collectibles and non-fungible tokens.
           </p>
           <Button
-            btnName="Start your search"
+            btnName="SEARCH FOR NFTs 🚀"
             handleClick={() => router.push("/searchPage")}
           />
         </div>

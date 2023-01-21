@@ -1,0 +1,10 @@
+.learnMore {
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-in;
+}
+
+.learnMore:hover {
+  background-color: var(--icons-color);
+  color: var(--shadow-dark-color);
+  border-radius: 0.3rem;
+}

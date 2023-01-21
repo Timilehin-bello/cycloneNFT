@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { DiJqueryLogo } from "react-icons/di";
+import { DiJqueryUiLogo } from "react-icons/di";
 import { useRouter } from "next/router";
 
 //INTERNAL IMPORT
@@ -16,9 +16,9 @@ const Brand = () => {
         <div className={Style.Brand_box_left}>
           {/* <Image src={images.logo} alt="brand logo" width={100} height={100} /> */}
           <a href="/">
-            <DiJqueryLogo className={Style.Brand_box_left_logo} />
+            <DiJqueryUiLogo className={Style.Brand_box_left_logo} />
           </a>
-          <h1>Earn free crypto with Ciscrypt</h1>
+          <h1>Welcome to Cyclone Marketplace</h1>
           <p>A creative agency that lead and inspire.</p>
 
           <div className={Style.Brand_box_left_btn}>
@@ -27,7 +27,7 @@ const Brand = () => {
               handleClick={() => router.push("/uploadNFT")}
             />
             <Button
-              btnName="Discover"
+              btnName="Search"
               handleClick={() => router.push("/searchPage")}
             />
           </div>

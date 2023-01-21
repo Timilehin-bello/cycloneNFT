@@ -22,7 +22,6 @@ const Profile = ({ currentAccount }) => {
         />
 
         <div className={Style.profile_account_info}>
-          <p>Shoaib Bhai</p>
           <small>{currentAccount.slice(0, 18)}..</small>
         </div>
       </div>
@@ -30,21 +29,9 @@ const Profile = ({ currentAccount }) => {
       <div className={Style.profile_menu}>
         <div className={Style.profile_menu_one}>
           <div className={Style.profile_menu_one_item}>
-            <FaUserAlt />
-            <p>
-              <Link href={{ pathname: "/author" }}>My Profile</Link>
-            </p>
-          </div>
-          <div className={Style.profile_menu_one_item}>
             <FaRegImage />
             <p>
-              <Link href={{ pathname: "/author" }}>My Items</Link>
-            </p>
-          </div>
-          <div className={Style.profile_menu_one_item}>
-            <FaUserEdit />
-            <p>
-              <Link href={{ pathname: "/account" }}>Edit Profile</Link>
+              <Link href={{ pathname: "/author" }}>My NFTs</Link>
             </p>
           </div>
         </div>
@@ -53,13 +40,13 @@ const Profile = ({ currentAccount }) => {
           <div className={Style.profile_menu_one_item}>
             <MdHelpCenter />
             <p>
-              <Link href={{ pathname: "/contactus" }}>Help</Link>
+              <Link href={{ pathname: "/contactus" }}>Contact</Link>
             </p>
           </div>
           <div className={Style.profile_menu_one_item}>
             <TbDownload />
             <p>
-              <Link href={{ pathname: "/aboutus" }}>About Us</Link>
+              <Link href={{ pathname: "/aboutus" }}>About</Link>
             </p>
           </div>
         </div>

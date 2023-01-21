@@ -1,3 +1,4 @@
+import bg_nft from "./bg_nft.jpg";
 import collection from "./collection.png";
 import creatorbackground1 from "./creatorbackground-1.jpeg";
 import creatorbackground2 from "./creatorbackground-2.jpeg";
@@ -63,6 +64,7 @@ import transferEther from "./ethereTransfer.gif";
 
 export default {
   hero2,
+  bg_nft,
   founder1,
   founder2,
   founder3,

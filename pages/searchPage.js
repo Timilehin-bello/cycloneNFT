@@ -21,8 +21,6 @@ const searchPage = () => {
 
   useEffect(() => {
     try {
-      // if (currentAccount) {
-
       fetchNFTs().then((items) => {
         // TODO: ADDED if
         if (items === undefined) {
@@ -32,7 +30,6 @@ const searchPage = () => {
         setNftsCopy(items);
         console.log(nfts);
       });
-      // }
     } catch (error) {
       setError("Please reload the browser", error);
     }
@@ -73,9 +70,9 @@ const searchPage = () => {
         onHandleSearch={onHandleSearch}
         onClearSearch={onClearSearch}
       />
-      <Filter />
+      {/* <Filter /> */}
       {nfts.length == 0 ? <Loader /> : <NFTCardTwo NFTData={nfts} />}
-      <Slider />
+      {/* <Slider /> */}
       <Brand />
     </div>
   );

@@ -1,27 +1,26 @@
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
-import { DiJqueryLogo } from "react-icons/di";
-//----IMPORT ICON
-import { MdNotifications } from "react-icons/md";
+import { DiJqueryUiLogo } from "react-icons/di";
+
 import { BsSearch } from "react-icons/bs";
-import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
-import Link from "next/link";
+import { CgMenuRight } from "react-icons/cg";
 import { useRouter } from "next/router";
 
 //INTERNAL IMPORT
 import Style from "./NavBar.module.css";
-import { Discover, HelpCenter, Notification, Profile, SideBar } from "./index";
+import { LearnMore, Notification, Profile, SideBar } from "./index";
 import { Button, Error } from "../componentsindex";
 import images from "../../img";
 
 //IMPORT FROM SMART CONTRACT
 import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
+import Explore from "./Explore/Explore";
 
 const NavBar = () => {
   //----USESTATE COMPONNTS
-  const [discover, setDiscover] = useState(false);
+  const [explore, setExplore] = useState(false);
   const [help, setHelp] = useState(false);
-  const [notification, setNotification] = useState(false);
+
   const [profile, setProfile] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
 
@@ -29,32 +28,18 @@ const NavBar = () => {
 
   const openMenu = (e) => {
     const btnText = e.target.innerText;
-    if (btnText == "Discover" && !discover) {
-      setDiscover(true);
+    if (btnText == "Explore" && !explore) {
+      setExplore(true);
       setHelp(false);
-      setNotification(false);
       setProfile(false);
-    } else if (btnText == "Help Center" && !help) {
+    } else if (btnText == "Learn More" && !help) {
       setHelp(true);
-      setDiscover(false);
-      setNotification(false);
+      setExplore(false);
       setProfile(false);
     } else {
-      setDiscover(false);
-      setHelp(false);
-      setNotification(false);
-      setProfile(false);
-    }
-  };
-
-  const openNotification = () => {
-    if (!notification) {
-      setNotification(true);
-      setDiscover(false);
+      setExplore(false);
       setHelp(false);
       setProfile(false);
-    } else {
-      setNotification(false);
     }
   };
 
@@ -62,8 +47,7 @@ const NavBar = () => {
     if (!profile) {
       setProfile(true);
       setHelp(false);
-      setDiscover(false);
-      setNotification(false);
+      setExplore(false);
     } else {
       setProfile(false);
     }
@@ -87,7 +71,7 @@ const NavBar = () => {
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
           <div className={Style.logo}>
-            <DiJqueryLogo onClick={() => router.push("/")} />
+            <DiJqueryUiLogo onClick={() => router.push("/")} />
           </div>
           <div className={Style.navbar_container_left_box_input}>
             <div className={Style.navbar_container_left_box_input_box}>
@@ -99,33 +83,24 @@ const NavBar = () => {
 
         {/* //END OF LEFT SECTION */}
         <div className={Style.navbar_container_right}>
-          <div className={Style.navbar_container_right_discover}>
-            {/* DISCOVER MENU */}
-            <p onClick={(e) => openMenu(e)}>Discover</p>
-            {discover && (
-              <div className={Style.navbar_container_right_discover_box}>
-                <Discover />
+          <div className={Style.navbar_container_right_explore}>
+            {/* explore MENU */}
+            <p onClick={(e) => openMenu(e)}>Explore</p>
+            {explore && (
+              <div className={Style.navbar_container_right_explore_box}>
+                <Explore />
               </div>
             )}
           </div>
 
-          {/* HELP CENTER MENU */}
+          {/* Learn More MENU */}
           <div className={Style.navbar_container_right_help}>
-            <p onClick={(e) => openMenu(e)}>Help Center</p>
+            <p onClick={(e) => openMenu(e)}>Learn More</p>
             {help && (
               <div className={Style.navbar_container_right_help_box}>
-                <HelpCenter />
+                <LearnMore />
               </div>
             )}
-          </div>
-
-          {/* NOTIFICATION */}
-          <div className={Style.navbar_container_right_notify}>
-            <MdNotifications
-              className={Style.notify}
-              onClick={() => openNotification()}
-            />
-            {notification && <Notification />}
           </div>
 
           {/* CREATE BUTTON SECTION */}

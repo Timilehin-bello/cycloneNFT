@@ -12,7 +12,7 @@ import {
   TiArrowSortedDown,
   TiArrowSortedUp,
 } from "react-icons/ti";
-import { DiJqueryLogo } from "react-icons/di";
+import { DiJqueryUiLogo } from "react-icons/di";
 
 //INTERNAL IMPORT
 import Style from "./SideBar.module.css";
@@ -22,48 +22,36 @@ import { Router } from "next/router";
 
 const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
   //------USESTATE
-  const [openDiscover, setOpenDiscover] = useState(false);
-  const [openHelp, setOpenHelp] = useState(false);
+  const [openExplore, setOpenExplore] = useState(false);
+  const [openLearnMore, setOpenLearnMore] = useState(false);
 
   const router = useRouter();
 
-  //--------DISCOVER NAVIGATION MENU
-  const discover = [
-    {
-      name: "Collection",
-      link: "collection",
-    },
+  //--------Explore NAVIGATION MENU
+  const explore = [
     {
       name: "Search",
       link: "searchPage",
     },
     {
-      name: "Author Profile",
+      name: "Author",
       link: "author",
     },
+    // {
+    //   name: "NFT Details",
+    //   link: "NFT-details",
+    // },
+    // {
+    //   name: "Account Setting",
+    //   link: "account",
+    // },
     {
-      name: "NFT Details",
-      link: "NFT-details",
-    },
-    {
-      name: "Account Setting",
-      link: "account",
-    },
-    {
-      name: "Upload NFT",
+      name: "Create NFTs",
       link: "uploadNFT",
-    },
-    {
-      name: "Connect Wallet",
-      link: "connectWallet",
-    },
-    {
-      name: "Blog",
-      link: "blog",
     },
   ];
   //------HELP CNTEER
-  const helpCenter = [
+  const learnMore = [
     {
       name: "About",
       link: "aboutus",
@@ -72,33 +60,21 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
       name: "Contact Us",
       link: "contactus",
     },
-    {
-      name: "Sign Up",
-      link: "signUp",
-    },
-    {
-      name: "LogIn",
-      link: "login",
-    },
-    {
-      name: "Subscription",
-      link: "subscription",
-    },
   ];
 
-  const openDiscoverMenu = () => {
-    if (!openDiscover) {
-      setOpenDiscover(true);
+  const openExploreMenu = () => {
+    if (!openExplore) {
+      setOpenExplore(true);
     } else {
-      setOpenDiscover(false);
+      setOpenExplore(false);
     }
   };
 
-  const openHelpMenu = () => {
-    if (!openHelp) {
-      setOpenHelp(true);
+  const openLearnMoreMenu = () => {
+    if (!openLearnMore) {
+      setOpenLearnMore(true);
     } else {
-      setOpenHelp(false);
+      setOpenLearnMore(false);
     }
   };
 
@@ -114,16 +90,12 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
       />
 
       <div className={Style.sideBar_box}>
-        {/* <Image src={images.logo} alt="logo" width={150} height={150} /> */}
         <p>
           <a href="/">
-            <DiJqueryLogo className={Style.sideBar_box_logo} />
+            <DiJqueryUiLogo className={Style.sideBar_box_logo} />
           </a>
         </p>
-        <p>
-          Discover the most outstanding articles on all topices of NFT & write
-          your own stories and share them
-        </p>
+
         <div className={Style.sideBar_social}>
           <a href="#">
             <TiSocialFacebook />
@@ -147,15 +119,15 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
         <div>
           <div
             className={Style.sideBar_menu_box}
-            onClick={() => openDiscoverMenu()}
+            onClick={() => openExploreMenu()}
           >
-            <p>Discover</p>
+            <p>Explore</p>
             <TiArrowSortedDown />
           </div>
 
-          {openDiscover && (
-            <div className={Style.sideBar_discover}>
-              {discover.map((el, i) => (
+          {openExplore && (
+            <div className={Style.sideBar_explore}>
+              {explore.map((el, i) => (
                 <p key={i + 1}>
                   <Link href={{ pathname: `${el.link}` }}>{el.name}</Link>
                 </p>
@@ -167,15 +139,15 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
         <div>
           <div
             className={Style.sideBar_menu_box}
-            onClick={() => openHelpMenu()}
+            onClick={() => openLearnMoreMenu()}
           >
-            <p>Help Center</p>
+            <p>Learn More</p>
             <TiArrowSortedDown />
           </div>
 
-          {openHelp && (
-            <div className={Style.sideBar_discover}>
-              {helpCenter.map((el, i) => (
+          {openLearnMore && (
+            <div className={Style.sideBar_explore}>
+              {learnMore.map((el, i) => (
                 <p key={i + 1}>
                   <Link href={{ pathname: `${el.link}` }}>{el.name}</Link>
                 </p>
