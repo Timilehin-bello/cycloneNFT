@@ -12,16 +12,16 @@ import images from "../../../img";
 const Profile = ({ currentAccount }) => {
   return (
     <div className={Style.profile}>
-      <div className={Style.profile_account}>
+      <div className={Style.profile_description}>
         <Image
           src={images.user1}
           alt="user profile"
           width={50}
           height={50}
-          className={Style.profile_account_img}
+          className={Style.profile_description_img}
         />
 
-        <div className={Style.profile_account_info}>
+        <div className={Style.profile_description_info}>
           <small>{currentAccount.slice(0, 18)}..</small>
         </div>
       </div>

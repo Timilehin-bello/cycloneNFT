@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { GrClose } from "react-icons/gr";
@@ -10,15 +9,12 @@ import {
   TiSocialYoutube,
   TiSocialInstagram,
   TiArrowSortedDown,
-  TiArrowSortedUp,
 } from "react-icons/ti";
 import { DiJqueryUiLogo } from "react-icons/di";
 
 //INTERNAL IMPORT
 import Style from "./SideBar.module.css";
-import images from "../../../img";
 import Button from "../../Button/Button";
-import { Router } from "next/router";
 
 const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
   //------USESTATE
@@ -37,14 +33,6 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
       name: "Author",
       link: "author",
     },
-    // {
-    //   name: "NFT Details",
-    //   link: "NFT-details",
-    // },
-    // {
-    //   name: "Account Setting",
-    //   link: "account",
-    // },
     {
       name: "Create NFTs",
       link: "uploadNFT",
@@ -89,10 +77,10 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
         onClick={() => closeSideBar()}
       />
 
-      <div className={Style.sideBar_box}>
+      <div className={Style.sideBar_box_container}>
         <p>
           <a href="/">
-            <DiJqueryUiLogo className={Style.sideBar_box_logo} />
+            <DiJqueryUiLogo className={Style.sideBar_box_container_logo} />
           </a>
         </p>
 
@@ -115,10 +103,10 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
         </div>
       </div>
 
-      <div className={Style.sideBar_menu}>
+      <div className={Style.sideBar_nav}>
         <div>
           <div
-            className={Style.sideBar_menu_box}
+            className={Style.sideBar_nav_container}
             onClick={() => openExploreMenu()}
           >
             <p>Explore</p>
@@ -138,7 +126,7 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
 
         <div>
           <div
-            className={Style.sideBar_menu_box}
+            className={Style.sideBar_nav_container}
             onClick={() => openLearnMoreMenu()}
           >
             <p>Learn More</p>

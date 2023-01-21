@@ -19,7 +19,7 @@ import Explore from "./Explore/Explore";
 const NavBar = () => {
   //----USESTATE COMPONNTS
   const [explore, setExplore] = useState(false);
-  const [help, setHelp] = useState(false);
+  const [learn, setLearnMore] = useState(false);
 
   const [profile, setProfile] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
@@ -30,15 +30,15 @@ const NavBar = () => {
     const btnText = e.target.innerText;
     if (btnText == "Explore" && !explore) {
       setExplore(true);
-      setHelp(false);
+      setLearnMore(false);
       setProfile(false);
-    } else if (btnText == "Learn More" && !help) {
-      setHelp(true);
+    } else if (btnText == "Learn More" && !learn) {
+      setLearnMore(true);
       setExplore(false);
       setProfile(false);
     } else {
       setExplore(false);
-      setHelp(false);
+      setLearnMore(false);
       setProfile(false);
     }
   };
@@ -46,7 +46,7 @@ const NavBar = () => {
   const openProfile = () => {
     if (!profile) {
       setProfile(true);
-      setHelp(false);
+      setLearnMore(false);
       setExplore(false);
     } else {
       setProfile(false);
@@ -70,7 +70,7 @@ const NavBar = () => {
     <div className={Style.navbar}>
       <div className={Style.navbar_container}>
         <div className={Style.navbar_container_left}>
-          <div className={Style.logo}>
+          <div className={Style.navbar_logo}>
             <DiJqueryUiLogo onClick={() => router.push("/")} />
           </div>
           <div className={Style.navbar_container_left_box_input}>
@@ -87,17 +87,17 @@ const NavBar = () => {
             {/* explore MENU */}
             <p onClick={(e) => openMenu(e)}>Explore</p>
             {explore && (
-              <div className={Style.navbar_container_right_explore_box}>
+              <div className={Style.navbar_container_right_explore_container}>
                 <Explore />
               </div>
             )}
           </div>
 
           {/* Learn More MENU */}
-          <div className={Style.navbar_container_right_help}>
-            <p onClick={(e) => openMenu(e)}>Learn More</p>
-            {help && (
-              <div className={Style.navbar_container_right_help_box}>
+          <div className={Style.navbar_container_right_learn}>
+            <p onClick={(e) => openMenu(e)}>Lsearn More</p>
+            {learn && (
+              <div className={Style.navbar_container_right_learn_container}>
                 <LearnMore />
               </div>
             )}

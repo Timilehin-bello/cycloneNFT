@@ -12,23 +12,23 @@
   background: var(--main-bg-color);
 }
 
-.profile_account_container {
+.profile_description_container {
   display: flex;
   align-items: center;
 }
 
-.profile_account {
+.profile_description {
   display: flex;
   align-items: center;
   gap: 2rem;
   padding: 1.5rem;
 }
 
-.profile_account_img {
+.profile_description_img {
   border-radius: 50%;
 }
 
-.profile_account_info {
+.profile_description_info {
   line-height: 0.3;
 }
 
