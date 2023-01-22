@@ -8,7 +8,7 @@ Cyclone NFT MarketPlace is a non-fungible token (NFT) marketplace where users ca
 
 # Snapshot
 
-![Cyclone NFT Pages](./)
+![Cyclone NFT Pages](./img/cyclone-nft-snapshot.gif)
 
 # Link
 

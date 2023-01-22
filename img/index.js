@@ -12,6 +12,8 @@ import update from "./update.png";
 import earn from "./earn.png";
 import loader from "./loadergif.gif";
 import errorgif from "./error.gif";
+import upload from "./upload.png";
+import user from "./user.png";
 
 export default {
   about,
@@ -28,4 +30,6 @@ export default {
   service4,
   loader,
   errorgif,
+  upload,
+  user,
 };

@@ -21,14 +21,11 @@ const contactus = () => {
           <div className={Style.contactus_box_box_left}>
             <div className={Style.contactus_box_box_left_item}>
               <h3> ADDRESS</h3>
-              <p>
-                Photo booth tattooed prism, portland taiyaki hoodie neutra
-                typewriter
-              </p>
+              <p>No 1 christ ambassador road abuja, Nigeria</p>
             </div>
             <div className={Style.contactus_box_box_left_item}>
               <h3>💌 EMAIL</h3>
-              <p>nc.example@example.com</p>
+              <p>emmatimmybello@gmail.com</p>
             </div>
             <div className={Style.contactus_box_box_left_item}>
               <h3>☎ PHONE</h3>
