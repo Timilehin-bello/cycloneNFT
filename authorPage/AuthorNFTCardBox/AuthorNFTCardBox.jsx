@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Style from "./AuthorNFTCardBox.module.css";
 import images from "../../img";
 import { NFTCardTwo } from "../../collectionPage/collectionIndex";
-import FollowerTabCard from "../../components/FollowerTab/FollowerTabCard/FollowerTabCard";
+import CreatorTabCard from "../../components/CreatorTab/CreatorTabCard/CreatorTabCard";
 import { Loader } from "../../components/componentsindex";
 
 const AuthorNFTCardBox = ({
@@ -110,14 +110,14 @@ const AuthorNFTCardBox = ({
       {follower && (
         <div className={Style.AuthorNFTCardBox_box}>
           {followerArray.map((el, i) => (
-            <FollowerTabCard i={i} el={el} />
+            <CreatorTabCard i={i} el={el} />
           ))}
         </div>
       )}
       {following && (
         <div className={Style.AuthorNFTCardBox_box}>
           {followingArray.map((el, i) => (
-            <FollowerTabCard i={i} el={el} />
+            <CreatorTabCard i={i} el={el} />
           ))}
         </div>
       )}

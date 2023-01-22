@@ -13,7 +13,7 @@ import {
   NFTCard,
   Collection,
   AudioLive,
-  FollowerTab,
+  CreatorTab,
   Slider,
   Brand,
   Video,
@@ -69,11 +69,7 @@ const Home = () => {
         paragraph="Discover the most outstanding NFTs in all topics of life."
       /> */}
       {/* <AudioLive /> */}
-      {creators.length == 0 ? (
-        <Loader />
-      ) : (
-        <FollowerTab TopCreator={creators} />
-      )}
+      {creators.length == 0 ? <Loader /> : <CreatorTab TopCreator={creators} />}
       {/* <Slider /> */}
       {/* <Collection /> */}
       <Title

@@ -95,7 +95,7 @@ const NavBar = () => {
 
           {/* Learn More MENU */}
           <div className={Style.navbar_container_right_learn}>
-            <p onClick={(e) => openMenu(e)}>Lsearn More</p>
+            <p onClick={(e) => openMenu(e)}>Learn More</p>
             {learn && (
               <div className={Style.navbar_container_right_learn_container}>
                 <LearnMore />

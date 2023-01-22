@@ -4,7 +4,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Style from "../styles/author.module.css";
 import { Banner, NFTCardTwo } from "../collectionPage/collectionIndex";
 import { Brand, Title } from "../components/componentsindex";
-import FollowerTabCard from "../components/FollowerTab/FollowerTabCard/FollowerTabCard";
+import CreatorTabCard from "../components/CreatorTab/CreatorTabCard/CreatorTabCard";
 import images from "../img";
 import {
   AuthorProfileCard,
@@ -103,7 +103,7 @@ const author = () => {
       /> */}
       {/* <div className={Style.author_box}>
         {followerArray.map((el, i) => (
-          <FollowerTabCard i={i} el={el} key={i + 1} />
+          <CreatorTabCard i={i} el={el} key={i + 1} />
         ))}
       </div> */}
 
