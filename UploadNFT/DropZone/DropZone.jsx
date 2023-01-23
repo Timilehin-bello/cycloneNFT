@@ -11,14 +11,10 @@ const DropZone = ({
   heading,
   subHeading,
   name,
-  website,
   description,
-  royalties,
-  fileSize,
-  category,
-  properties,
   uploadToIPFS,
   setImage,
+  price,
 }) => {
   const [fileUrl, setFileUrl] = useState(null);
 
@@ -61,40 +57,21 @@ const DropZone = ({
             <Image src={fileUrl} alt="nft image" width={200} height={200} />
 
             <div className={Style.DropZone_box_aside_box_preview}>
-              <div className={Style.DropZone_box_aside_box_preview_one}>
+              <div>
                 <p>
-                  <samp>NFT Name:</samp>
+                  <span>NFT Name:</span>
                   {name || ""}
-                </p>
-                <p>
-                  <samp>Website:</samp>
-                  {website || ""}
                 </p>
               </div>
 
-              <div className={Style.DropZone_box_aside_box_preview_two}>
+              <div>
                 <p>
                   <span>Description</span>
                   {description || ""}
                 </p>
-              </div>
-
-              <div className={Style.DropZone_box_aside_box_preview_three}>
                 <p>
-                  <span>Royalties</span>
-                  {royalties || ""}
-                </p>
-                <p>
-                  <span>FileSize</span>
-                  {fileSize || ""}
-                </p>
-                <p>
-                  <span>Properties</span>
-                  {properties || ""}
-                </p>
-                <p>
-                  <span>Category</span>
-                  {category || ""}
+                  <span>Price</span>
+                  {price || ""}
                 </p>
               </div>
             </div>

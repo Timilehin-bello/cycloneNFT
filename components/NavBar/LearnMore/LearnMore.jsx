@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 
-//INTERNAL IMPORT
 import Style from "./LearnMore.module.css";
 
 const LearnMore = () => {

@@ -1,6 +1,5 @@
 import React from "react";
 
-//INTERNAL IMPORT
 import { NFTDescription, NFTDetailsImg, NFTTabs } from "./NFTDetailsIndex";
 import Style from "./NFTDetailsPage.module.css";
 

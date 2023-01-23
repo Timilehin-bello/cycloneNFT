@@ -12,7 +12,6 @@ import {
 } from "react-icons/ti";
 import { DiJqueryUiLogo } from "react-icons/di";
 
-//INTERNAL IMPORT
 import Style from "./SideBar.module.css";
 import Button from "../../Button/Button";
 

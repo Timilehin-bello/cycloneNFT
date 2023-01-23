@@ -3,7 +3,6 @@ import Image from "next/image";
 import { MdVerified } from "react-icons/md";
 import { TiTick } from "react-icons/ti";
 
-//INTERNAL IMPORT
 import Style from "./CreatorTabCard.module.css";
 import images from "../../../img";
 const CreatorTabCard = ({ i, el }) => {

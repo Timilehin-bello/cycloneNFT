@@ -4,13 +4,12 @@ import NavBar from "./NavBar/NavBar";
 import HeroSection from "./HeroSection/HeroSection";
 import Service from "./Service/Service";
 import BigNFTSilder from "./BigNFTSilder/BigNFTSilder";
-import Subscribe from "./Subscribe/Subscribe";
+import BrandEngage from "./BrandEngage/BrandEngage";
 import Title from "./Title/Title";
 import Filter from "./Filter/Filter";
 import NFTCard from "./NFTCard/NFTCard";
 // import Collection from "./Collection/Collection";
 import AudioLive from "./AudioLive/AudioLive";
-import LikeProfile from "./LikeProfile/LikeProfile";
 import CreatorTab from "./CreatorTab/CreatorTab";
 import Slider from "./Slider/Slider";
 import Brand from "./Brand/Brand";
@@ -25,12 +24,11 @@ export {
   HeroSection,
   Service,
   BigNFTSilder,
-  Subscribe,
+  BrandEngage,
   Title,
   Filter,
   NFTCard,
   AudioLive,
-  LikeProfile,
   CreatorTab,
   Slider,
   Brand,

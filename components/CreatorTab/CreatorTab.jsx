@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-//INTERNAL IMPORT
 import Style from "./CreatorTab.module.css";
 import CreatorTabCard from "./CreatorTabCard/CreatorTabCard";
 import images from "../../img";

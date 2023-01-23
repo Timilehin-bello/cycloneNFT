@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { TiArrowLeftThick, TiArrowRightThick } from "react-icons/ti";
 
-//INTERNAL IMPORT
 import Style from "./Slider.module.css";
 import SliderCard from "./SliderCard/SliderCard";
 import images from "../../img";

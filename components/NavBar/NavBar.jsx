@@ -6,7 +6,6 @@ import { BsSearch } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
 import { useRouter } from "next/router";
 
-//INTERNAL IMPORT
 import Style from "./NavBar.module.css";
 import { LearnMore, Notification, Profile, SideBar } from "./index";
 import { Button, Error } from "../componentsindex";

@@ -3,7 +3,6 @@ import Image from "next/image";
 import { DiJqueryUiLogo } from "react-icons/di";
 import { useRouter } from "next/router";
 
-//INTERNAL IMPORT
 import Style from "./Brand.module.css";
 import images from "../../img";
 import { Button } from "../../components/componentsindex.js";

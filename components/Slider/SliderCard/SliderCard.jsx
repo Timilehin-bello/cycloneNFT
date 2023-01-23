@@ -2,10 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-//INTERNAL IMPORT
 import Style from "./SliderCard.module.css";
-import images from "../../../img";
-import LikeProfile from "../../LikeProfile/LikeProfile";
 
 const SliderCard = ({ el, i }) => {
   return (
@@ -24,7 +21,6 @@ const SliderCard = ({ el, i }) => {
         <div className={Style.sliderCard_box_title}>
           <p>NFT Video #{i + 1}</p>
           <div className={Style.sliderCard_box_title_like}>
-            {/* <LikeProfile /> */}
             <small>{i + 4} 0f 100</small>
           </div>
         </div>

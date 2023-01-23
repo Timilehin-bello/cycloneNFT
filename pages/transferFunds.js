@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import { FaEthereum, FaUserAlt } from "react-icons/fa";
 
-//INTERNAL IMPORT
 import Style from "../styles/transferFunds.module.css";
 import formStyle from "../AccountPage/Form/Form.module.css";
 import images from "../img";

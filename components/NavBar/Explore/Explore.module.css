@@ -1,7 +1,7 @@
 .explore {
   padding: 0.5rem 1rem;
   transition: all 0.3s ease-in;
-  z-index: 2222222222;
+  z-index: 1;
 }
 
 .explore:hover {

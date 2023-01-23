@@ -1,0 +1,71 @@
+.brandengage {
+  width: 100%;
+}
+
+.brandengage_box {
+  width: 80%;
+  margin: 0 auto;
+  padding: 8rem 0;
+
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  align-items: center;
+}
+
+.brandengage_box_left h2 {
+  font-size: 3rem;
+  line-height: 0;
+}
+
+.brandengage_box p {
+  font-size: 1.2rem;
+}
+
+.brandengage_box_left_box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.brandengage_box_left_box small {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.brandengage_box_left_box span {
+  background-color: var(--icons-color);
+  color: var(--main-bg-color);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  width: 4rem;
+  text-align: center;
+}
+
+.brandengage_box_left_input_icon {
+  font-size: 2rem;
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 768px) {
+  .brandengage_box {
+    width: 90%;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .brandengage_box_left h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .brandengage_box {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+
+  .brandengage_box_left h2 {
+    font-size: 2rem;
+  }
+}

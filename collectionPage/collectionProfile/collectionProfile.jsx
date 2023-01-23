@@ -7,7 +7,6 @@ import {
   TiSocialInstagram,
 } from "react-icons/ti";
 
-//INTERNAL IMPORT
 import Style from "./collectionProfile.module.css";
 import images from "../../img";
 

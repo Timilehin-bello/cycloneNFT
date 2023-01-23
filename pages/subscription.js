@@ -1,6 +1,5 @@
 import React from "react";
 
-//INTERNAL IMPORT
 import Style from "../styles/subscription.module.css";
 import Subscription from "../Subscription/Subscription";
 const subscription = () => {

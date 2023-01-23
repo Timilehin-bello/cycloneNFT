@@ -4,7 +4,6 @@ import { BsImages } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
 
-//INTERNAL IMPORT
 import Style from "./NFTCard.module.css";
 import images from "../../img";
 import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";

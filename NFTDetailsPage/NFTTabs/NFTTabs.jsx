@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 
-//INTERNAL IMPORT
 import Style from "./NFTTabs.module.css";
 
 const NFTTabs = ({ dataTab, icon }) => {

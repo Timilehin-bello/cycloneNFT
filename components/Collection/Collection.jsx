@@ -5,7 +5,6 @@ import {
   BsCalendar3,
 } from "react-icons/bs";
 
-//INTERNAL IMPORT
 import Style from "./Collection.module.css";
 import DaysComponent from "./DaysComponents/DaysComponents";
 import images from "../../img";

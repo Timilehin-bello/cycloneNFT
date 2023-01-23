@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 
-//INTERNAL IMPORT
 import Style from "./Error.module.css";
 import images from "../../img";
 

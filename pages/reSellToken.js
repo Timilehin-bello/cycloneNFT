@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import Image from "next/image";
 
-//INTERNAL IMPORT
 import Style from "../styles/reSellToken.module.css";
 import formStyle from "../AccountPage/Form/Form.module.css";
 import { Button } from "../components/componentsindex";

@@ -13,7 +13,6 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { MdVerified } from "react-icons/md";
 import { TiTick } from "react-icons/ti";
 
-//INTERNAL IMPORT
 import Style from "./Filter.module.css";
 
 const Filter = () => {

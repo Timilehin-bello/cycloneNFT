@@ -14,7 +14,6 @@ import {
 } from "react-icons/ti";
 import { BsThreeDots } from "react-icons/bs";
 
-//INTERNAL IMPORT
 import Style from "./AuthorProfileCard.module.css";
 import images from "../../img";
 import { Button } from "../../components/componentsindex.js";
@@ -54,7 +53,7 @@ const AuthorProfileCard = ({ currentAccount }) => {
       <div className={Style.AuthorProfileCard_box}>
         <div className={Style.AuthorProfileCard_box_img}>
           <Image
-            src={images.nft_image_1}
+            src={images.nft_image_3}
             className={Style.AuthorProfileCard_box_img_img}
             alt="NFT IMAGES"
             width={220}
@@ -63,17 +62,10 @@ const AuthorProfileCard = ({ currentAccount }) => {
         </div>
 
         <div className={Style.AuthorProfileCard_box_info}>
-          <h2>
-            Dony Herrera{""}{" "}
-            <span>
-              <MdVerified />
-            </span>{" "}
-          </h2>
-
           <div className={Style.AuthorProfileCard_box_info_address}>
             <input
               type="text"
-              // TODO: ADDED 
+              // TODO: ADDED
               defaultValue={currentAccount}
               // value={currentAccount}
               id="myInput"
@@ -85,8 +77,8 @@ const AuthorProfileCard = ({ currentAccount }) => {
           </div>
 
           <p>
-            Punk #4786 / An OG Cryptopunk Collector, hoarder of NFTs.
-            Contributing to @ether_cards, an NFT Monetization Platform.
+            The most secure marketplace for buying and selling unique crypto
+            assets.
           </p>
 
           <div className={Style.AuthorProfileCard_box_info_social}>
@@ -103,62 +95,6 @@ const AuthorProfileCard = ({ currentAccount }) => {
               <TiSocialYoutube />
             </a>
           </div>
-        </div>
-
-        <div className={Style.AuthorProfileCard_box_share}>
-          <Button btnName="Follow" handleClick={() => {}} />
-          <MdCloudUpload
-            onClick={() => openShare()}
-            className={Style.AuthorProfileCard_box_share_icon}
-          />
-
-          {share && (
-            <div className={Style.AuthorProfileCard_box_share_upload}>
-              <p>
-                <span>
-                  <TiSocialFacebook />
-                </span>{" "}
-                {""}
-                Facebook
-              </p>
-              <p>
-                <span>
-                  <TiSocialInstagram />
-                </span>{" "}
-                {""}
-                Instragram
-              </p>
-              <p>
-                <span>
-                  <TiSocialLinkedin />
-                </span>{" "}
-                {""}
-                LinkedIn
-              </p>
-              <p>
-                <span>
-                  <TiSocialYoutube />
-                </span>{" "}
-                {""}
-                YouTube
-              </p>
-            </div>
-          )}
-
-          <BsThreeDots
-            onClick={() => openReport()}
-            className={Style.AuthorProfileCard_box_share_icon}
-          />
-
-          {report && (
-            <p className={Style.AuthorProfileCard_box_share_report}>
-              <span>
-                <MdOutlineReportProblem />
-              </span>{" "}
-              {""}
-              Report abouse
-            </p>
-          )}
         </div>
       </div>
     </div>

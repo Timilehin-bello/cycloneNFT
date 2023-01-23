@@ -8,7 +8,6 @@ import {
   TiSocialInstagram,
 } from "react-icons/ti";
 
-//INTERNAL IMPORT
 import Style from "./Footer.module.css";
 import { Explore, LearnMore } from "../NavBar/index";
 

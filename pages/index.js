@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 
-//INTERNAL IMPORT
 import Style from "../styles/index.module.css";
 import {
   HeroSection,
   Service,
   BigNFTSilder,
-  Subscribe,
+  BrandEngage,
   Title,
   Category,
   Filter,
@@ -84,7 +83,7 @@ const Home = () => {
         paragraph="Explore the NFTs in the most featured categories."
       /> */}
       {/* <Category /> */}
-      <Subscribe />
+      <BrandEngage />
       <Video />
       <Brand />
     </div>

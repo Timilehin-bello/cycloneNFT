@@ -7,7 +7,6 @@ import {
   TiSocialInstagram,
 } from "react-icons/ti";
 
-//INTERNAL IMPORT
 import Style from "./Form.module.css";
 import { Button } from "../../components/componentsindex.js";
 
