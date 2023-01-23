@@ -116,7 +116,7 @@ const NavBar = () => {
 
           {/* USER PROFILE */}
 
-          <div className={Style.navbar_container_right_profile_box}>
+          {/* <div className={Style.navbar_container_right_profile_box}>
             <div className={Style.navbar_container_right_profile}>
               <Image
                 src={images.user1}
@@ -129,7 +129,7 @@ const NavBar = () => {
 
               {profile && <Profile currentAccount={currentAccount} />}
             </div>
-          </div>
+          </div> */}
 
           {/* MENU BUTTON */}
 
