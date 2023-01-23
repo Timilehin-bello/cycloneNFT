@@ -1,3 +1,4 @@
+import about from "./about.jpg";
 import bg_nft from "./bg_nft.jpg";
 import collection from "./collection.png";
 import creatorbackground1 from "./creatorbackground-1.jpeg";
@@ -11,6 +12,7 @@ import creatorbackground8 from "./creatorbackground-8.jpg";
 import creatorbackground9 from "./creatorbackground-9.jpg";
 import creatorbackground10 from "./creatorbackground-10.jpg";
 import creatorbackground11 from "./creatorbackground-11.jpg";
+import user from "./user.png";
 import user1 from "./user-1.png";
 import user2 from "./user-2.png";
 import user3 from "./user-3.png";
@@ -63,6 +65,7 @@ import transfer from "./transfer.gif";
 import transferEther from "./ethereTransfer.gif";
 
 export default {
+  about,
   hero2,
   bg_nft,
   founder1,
@@ -99,6 +102,7 @@ export default {
   creatorbackground9,
   creatorbackground10,
   creatorbackground11,
+  user,
   user1,
   user2,
   user3,

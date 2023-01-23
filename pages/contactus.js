@@ -9,7 +9,7 @@ import {
 import { HiOutlineMail } from "react-icons/hi";
 
 import Style from "../styles/contactus.module.css";
-import formStyle from "../AccountPage/Form/Form.module.css";
+import formStyle from "../Styles/Form.module.css";
 import { Button } from "../components/componentsindex";
 
 const contactus = () => {
@@ -20,7 +20,7 @@ const contactus = () => {
         <div className={Style.contactus_box_box}>
           <div className={Style.contactus_box_box_left}>
             <div className={Style.contactus_box_box_left_item}>
-              <h3>🗺 ADDRESS</h3>
+              <h3> ADDRESS</h3>
               <p>
                 Photo booth tattooed prism, portland taiyaki hoodie neutra
                 typewriter
@@ -32,7 +32,7 @@ const contactus = () => {
             </div>
             <div className={Style.contactus_box_box_left_item}>
               <h3>☎ PHONE</h3>
-              <p>000-123-456-7890</p>
+              <p>234-813-8349-665</p>
             </div>
             <div className={Style.contactus_box_box_left_item}>
               <h3>🌏 SOCIALS</h3>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AiTwotonePropertySafety } from "react-icons/ai";
 import { useRouter } from "next/router";
 import Style from "./Upload.module.css";
-import formStyle from "../AccountPage/Form/Form.module.css";
+import formStyle from "../styles/Form.module.css";
 import { Button } from "../components/componentsindex.js";
 import { DropZone } from "./uploadNFTIndex.js";
 
@@ -45,13 +45,9 @@ const UploadNFT = ({ uploadToIPFS, createNFT }) => {
             id="1"
             cols="30"
             rows="6"
-            placeholder="something about yourself in few words"
+            placeholder="A brief explanation "
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
-          <p>
-            The description will be included on the item's detail page
-            underneath its image. Markdown syntax is supported.
-          </p>
         </div>
 
         <div className={formStyle.Form_box_input_social}>

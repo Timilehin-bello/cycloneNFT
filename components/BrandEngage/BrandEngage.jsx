@@ -9,7 +9,7 @@ const BrandEngage = () => {
     <div className={Style.brandengage}>
       <div className={Style.brandengage_box}>
         <div className={Style.brandengage_box_left}>
-          <h2>Cyclone Digital Marketplace</h2>
+          <h2> 👋CYCLONE </h2>
           <p>Engage with Cyclone and Own Unique NFTs</p>
           <div className={Style.brandengage_box_left_box}>
             <span>01</span>

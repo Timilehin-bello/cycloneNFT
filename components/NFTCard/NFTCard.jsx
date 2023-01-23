@@ -36,7 +36,7 @@ const NFTCard = ({ NFTData }) => {
             </div>
 
             <div className={Style.NFTCard_box_update}>
-              <div className={Style.NFTCard_box_update_left}>
+              {/* <div className={Style.NFTCard_box_update_left}>
                 <div
                   className={Style.NFTCard_box_update_left_like}
                   onClick={() => likeNft()}
@@ -49,7 +49,7 @@ const NFTCard = ({ NFTData }) => {
                     />
                   )}
                 </div>
-              </div>
+              </div> */}
 
               {/* <div className={Style.NFTCard_box_update_right}>
                 <div className={Style.NFTCard_box_update_right_info}></div>
@@ -81,9 +81,9 @@ const NFTCard = ({ NFTData }) => {
                   </div>
                 </div>
               </div>
-              <div className={Style.NFTCard_box_update_details_category}>
+              {/* <div className={Style.NFTCard_box_update_details_category}>
                 <BsImages />
-              </div>
+              </div> */}
             </div>
           </div>
         </Link>

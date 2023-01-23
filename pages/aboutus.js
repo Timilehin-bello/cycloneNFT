@@ -50,24 +50,45 @@ const aboutus = () => {
           <div className={Style.aboutus_box_hero_left}>
             <h1>👋 About Us.</h1>
             <p>
-              We’re impartial and independent, and every day we create
-              distinctive, world-class programmes and content which inform,
-              educate and entertain millions of people in the around the world.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum
+              aliquam, dolores non reiciendis dolorem pariatur blanditiis ad
+              nesciunt, maiores corrupti labore harum fuga tempore! Minima
+              repudiandae obcaecati mollitia corrupti sequi.
             </p>
           </div>
           <div className={Style.aboutus_box_hero_right}>
-            <Image src={images.hero2} />
+            <Image src={images.about} />
           </div>
         </div>
 
-        <div className={Style.aboutus_box_title}>
-          <h2>⛱ Founder</h2>
-          <p>
-            We’re impartial and independent, and every day we create
-            distinctive, world-class programmes and content
-          </p>
+        <div className={Style.aboutus_founder_box_hero}>
+          <div className={Style.aboutus_box_hero_right}>
+            <Image
+              src={images.user}
+              className={Style.aboutus_box_founder_box_img}
+            />
+          </div>
+          <div className={Style.aboutus_box_hero_left}>
+            <h1>👋 Founder.</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum
+              aliquam, dolores non reiciendis dolorem pariatur blanditiis ad
+              nesciunt, maiores corrupti labore harum fuga tempore! Minima
+              repudiandae obcaecati mollitia corrupti sequi.
+            </p>
+          </div>
         </div>
 
+        {/* <div className={Style.aboutus_box_title}>
+          <h2>⛱ Founder</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Necessitatibus id repellendus maiores a incidunt et ad, magni
+            tenetur iure, dolore perferendis non! Quo asperiores, quos iure
+            deleniti veniam placeat ipsam.
+          </p>
+        </div> */}
+        {/* 
         <div className={Style.aboutus_box_founder}>
           <div className={Style.aboutus_box_founder_box}>
             {founderArray.map((el, i) => (
@@ -84,17 +105,17 @@ const aboutus = () => {
               </div>
             ))}
           </div>
-        </div>
-
+        </div> */}
+        {/* 
         <div className={Style.aboutus_box_title}>
           <h2>🚀 Fast Facts</h2>
           <p>
             We’re impartial and independent, and every day we create
             distinctive, world-class programmes and content
           </p>
-        </div>
+        </div> */}
 
-        <div className={Style.aboutus_box_facts}>
+        {/* <div className={Style.aboutus_box_facts}>
           <div className={Style.aboutus_box_facts_box}>
             {factsArray.map((el, i) => (
               <div className={Style.aboutus_box_facts_box_info} key={i + 1}>
@@ -103,7 +124,7 @@ const aboutus = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
       <Brand />
     </div>
