@@ -39,36 +39,12 @@
   border-radius: 2rem;
 }
 
-.CreatorTabCard_box_profile {
-  grid-column: 1/-1;
-  text-align: center;
-  margin-top: -2rem;
-  position: relative;
-}
-
-.CreatorTabCard_box_profile_img {
-  border-radius: 50%;
-  padding: 1rem;
-  z-index: 1;
-}
-
-.CreatorTabCard_box_profile::before {
-  position: absolute;
-  content: "";
-  width: 5rem;
-  height: 5rem;
-  background-color: var(--main-bg-color);
-  border-radius: 50%;
-  top: -20%;
-  left: 38%;
-}
-
 .CreatorTabCard_box_info {
   grid-column: 1/-1;
   display: flex;
   align-items: center;
   line-height: 0;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: -1rem;
   padding-inline: 1rem;
   padding-bottom: 1rem;

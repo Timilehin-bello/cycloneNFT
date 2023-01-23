@@ -16,13 +16,10 @@ import Style from "./SideBar.module.css";
 import Button from "../../Button/Button";
 
 const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
-  //------USESTATE
   const [openExplore, setOpenExplore] = useState(false);
   const [openLearnMore, setOpenLearnMore] = useState(false);
 
   const router = useRouter();
-
-  //--------Explore NAVIGATION MENU
   const explore = [
     {
       name: "Search",
@@ -37,7 +34,6 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
       link: "uploadNFT",
     },
   ];
-  //------HELP CNTEER
   const learnMore = [
     {
       name: "About",
@@ -52,6 +48,7 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
   const openExploreMenu = () => {
     if (!openExplore) {
       setOpenExplore(true);
+      setOpenLearnMore(false);
     } else {
       setOpenExplore(false);
     }
@@ -60,6 +57,7 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
   const openLearnMoreMenu = () => {
     if (!openLearnMore) {
       setOpenLearnMore(true);
+      setOpenExplore(false);
     } else {
       setOpenLearnMore(false);
     }
@@ -153,8 +151,6 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
             handleClick={() => router.push("/uploadNFT")}
           />
         )}
-
-        <Button btnName="Connect Wallet" handleClick={() => {}} />
       </div>
     </div>
   );

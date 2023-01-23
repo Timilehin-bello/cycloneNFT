@@ -103,7 +103,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       console.log(accounts);
       setCurrentAccount(accounts[0]);
 
-      window.location.reload();
+      // window.location.reload();
       connectingWithSmartContract();
     } catch (error) {
       setError("Error while connecting to wallet");
@@ -136,6 +136,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const url = `https://infura-ipfs.io/ipfs/${added.path}`;
 
       await createSale(url, price);
+
       router.push("/searchPage");
     } catch (error) {
       setError("Error while creating NFT");
@@ -164,15 +165,18 @@ export const NFTMarketplaceProvider = ({ children }) => {
     } catch (error) {
       setError("error while creating sale");
       setOpenError(true);
-      console.log(error);
     }
   };
 
   const fetchNFTs = async () => {
     try {
-      const provider = new ethers.providers.JsonRpcProvider();
+      const provider = new ethers.providers.JsonRpcProvider(
+        "https://polygon-mumbai.g.alchemy.com/v2/KBuX4MEvHnuxz1qVl9Rd-QKqEl0WUVWW"
+      );
 
+      console.log(provider);
       const contract = fetchContract(provider);
+      // const contract = fetchContract(provider);
 
       const data = await contract.fetchMarketItems();
 
@@ -216,6 +220,10 @@ export const NFTMarketplaceProvider = ({ children }) => {
       setOpenError(true);
     }
   };
+
+  useEffect(() => {
+    fetchNFTs();
+  }, []);
 
   const fetchMyNFTsOrListedNFTs = async (type) => {
     try {

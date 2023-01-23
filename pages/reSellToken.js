@@ -4,7 +4,7 @@ import axios from "axios";
 import Image from "next/image";
 
 import Style from "../styles/reSellToken.module.css";
-import formStyle from "../Styles/Form.module.css";
+import formStyle from "../styles/Form.module.css";
 import { Button } from "../components/componentsindex";
 
 //IMPORT SMART CONTRACT

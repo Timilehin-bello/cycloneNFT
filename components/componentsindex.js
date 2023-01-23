@@ -6,7 +6,7 @@ import Service from "./Service/Service";
 // import BigNFTSilder from "./BigNFTSilder/BigNFTSilder";
 import BrandEngage from "./BrandEngage/BrandEngage";
 import Title from "./Title/Title";
-import Filter from "./Filter/Filter";
+// import Filter from "./Filter/Filter";
 import NFTCard from "./NFTCard/NFTCard";
 // import Collection from "./Collection/Collection";
 // import AudioLive from "./AudioLive/AudioLive";
@@ -26,7 +26,7 @@ export {
   // BigNFTSilder,
   BrandEngage,
   Title,
-  Filter,
+  // Filter,
   NFTCard,
   // AudioLive,
   CreatorTab,

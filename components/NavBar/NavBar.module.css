@@ -133,10 +133,6 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  /* .navbar_logo {
-    font-size: 4rem;
-  } */
-
   .navbar_container_left {
     grid-template-columns: 1fr;
   }

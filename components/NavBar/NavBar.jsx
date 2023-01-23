@@ -7,9 +7,8 @@ import { CgMenuRight } from "react-icons/cg";
 import { useRouter } from "next/router";
 
 import Style from "./NavBar.module.css";
-import { LearnMore, Notification, Profile, SideBar } from "./index";
+import { LearnMore, SideBar } from "./index";
 import { Button, Error } from "../componentsindex";
-import images from "../../img";
 
 //IMPORT FROM SMART CONTRACT
 import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
@@ -20,7 +19,6 @@ const NavBar = () => {
   const [explore, setExplore] = useState(false);
   const [learn, setLearnMore] = useState(false);
 
-  const [profile, setProfile] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
 
   const router = useRouter();
@@ -30,25 +28,12 @@ const NavBar = () => {
     if (btnText == "Explore" && !explore) {
       setExplore(true);
       setLearnMore(false);
-      setProfile(false);
     } else if (btnText == "Learn More" && !learn) {
       setLearnMore(true);
       setExplore(false);
-      setProfile(false);
     } else {
       setExplore(false);
       setLearnMore(false);
-      setProfile(false);
-    }
-  };
-
-  const openProfile = () => {
-    if (!profile) {
-      setProfile(true);
-      setLearnMore(false);
-      setExplore(false);
-    } else {
-      setProfile(false);
     }
   };
 
@@ -83,7 +68,7 @@ const NavBar = () => {
         {/* //END OF LEFT SECTION */}
         <div className={Style.navbar_container_right}>
           <div className={Style.navbar_container_right_explore}>
-            {/* explore MENU */}
+            {/* Explore MENU */}
             <p onClick={(e) => openMenu(e)}>Explore</p>
             {explore && (
               <div className={Style.navbar_container_right_explore_container}>
@@ -113,23 +98,6 @@ const NavBar = () => {
               />
             )}
           </div>
-
-          {/* USER PROFILE */}
-
-          {/* <div className={Style.navbar_container_right_profile_box}>
-            <div className={Style.navbar_container_right_profile}>
-              <Image
-                src={images.user1}
-                alt="Profile"
-                width={40}
-                height={40}
-                onClick={() => openProfile()}
-                className={Style.navbar_container_right_profile}
-              />
-
-              {profile && <Profile currentAccount={currentAccount} />}
-            </div>
-          </div> */}
 
           {/* MENU BUTTON */}
 
