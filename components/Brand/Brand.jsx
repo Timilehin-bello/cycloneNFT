@@ -17,7 +17,7 @@ const Brand = () => {
           <a href="/">
             <DiJqueryUiLogo className={Style.Brand_box_left_logo} />
           </a>
-          <h1>Welcome to Cyclone Marketplace</h1>
+          <h1>Cyclone NFT Marketplace</h1>
           <p>A creative agency that lead and inspire.</p>
 
           <div className={Style.Brand_box_left_btn}>
