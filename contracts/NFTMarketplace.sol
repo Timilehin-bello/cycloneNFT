@@ -12,7 +12,7 @@ contract NFTMarketplace is ERC721URIStorage {
     Counters.Counter private _tokenIds;
     Counters.Counter private _itemsSold;
 
-    uint256 listingPrice = 0.025 ether;
+    uint256 listingPrice = 0.0025 ether;
     address payable owner;
 
     mapping(uint256 => MarketItem) private idToMarketItem;
@@ -41,7 +41,7 @@ contract NFTMarketplace is ERC721URIStorage {
         _;
     }
 
-    constructor() ERC721("Metaverse Tokens", "METT") {
+    constructor() ERC721("Cyclone Tokens", "CTN") {
         owner = payable(msg.sender);
     }
 

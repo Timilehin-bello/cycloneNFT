@@ -50,6 +50,7 @@ artifacts
 node_modules
 .env
 coverage
+package-lock.json
 coverage.json
 typechain
 typechain-types
