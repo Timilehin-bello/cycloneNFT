@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 
 import Style from "./Error.module.css";
 import images from "../../img";
 
-//SMAFRT CONTRCAT IMPORT CONTEXT
 import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
 
 const Error = () => {

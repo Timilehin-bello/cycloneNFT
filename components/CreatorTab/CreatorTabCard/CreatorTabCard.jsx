@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 import Style from "./CreatorTabCard.module.css";
@@ -16,7 +16,7 @@ const CreatorTabCard = ({ i, el }) => {
         <div className={Style.CreatorTabCard_box_img}>
           <Image
             className={Style.CreatorTabCard_box_img_img}
-            src={el.background || images[`creatorbackground${i + 1}`]}
+            src={images.creatorbackground1}
             alt="profile braground"
             width={500}
             height={300}

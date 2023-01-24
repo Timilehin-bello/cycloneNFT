@@ -36,20 +36,29 @@ const contactus = () => {
             </div>
             <div className={Style.contactus_box_box_left_item}>
               <h3>🌏 SOCIALS</h3>
-              <a href="#">
+              <a
+                href="https://www.facebook.com/profile.php?id=100009096397038"
+                target="_blank"
+              >
                 <TiSocialFacebook />
               </a>
-              <a href="#">
+              <a
+                href="https://www.linkedin.com/in/oluwatimilehin-bello/"
+                target="_blank"
+              >
                 <TiSocialLinkedin />
               </a>
-              <a href="#">
-                <TiSocialInstagram />
+              <a href="https://twitter.com/Timmee_Bello" target="_blank">
+                <TiSocialTwitter />
               </a>
-              <a href="#">
+              <a
+                href="https://www.youtube.com/channel/UCDyKFRctmBNBRm1o8-MY4hA"
+                target="_blank"
+              >
                 <TiSocialYoutube />
               </a>
-              <a href="#">
-                <TiSocialTwitter />
+              <a href="https://www.instagram.com/teemee_bello/" target="_blank">
+                <TiSocialInstagram />
               </a>
             </div>
           </div>
@@ -59,7 +68,7 @@ const contactus = () => {
                 <label htmlFor="name">Full Name</label>
                 <input
                   type="text"
-                  placeholder="shoaib bhai"
+                  placeholder="Enter your name"
                   className={formStyle.Form_box_input_userName}
                 />
               </div>
@@ -79,7 +88,7 @@ const contactus = () => {
                   id=""
                   cols="30"
                   rows="6"
-                  placeholder="something about yourself in few words"
+                  placeholder="Enter your Message"
                 ></textarea>
               </div>
               <Button

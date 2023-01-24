@@ -48,8 +48,6 @@
   font-size: 1.4rem;
 }
 
-/* //-------RIGHT */
-
 .navbar_container_right {
   display: flex;
 
@@ -109,8 +107,6 @@
   font-size: 2.5rem;
   cursor: pointer;
 }
-
-/* /////------SIDEBAR */
 
 .sideBar {
   position: fixed;

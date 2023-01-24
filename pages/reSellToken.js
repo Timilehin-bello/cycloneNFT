@@ -7,7 +7,6 @@ import Style from "../styles/reSellToken.module.css";
 import formStyle from "../styles/Form.module.css";
 import { Button } from "../components/componentsindex";
 
-//IMPORT SMART CONTRACT
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
 const reSellToken = () => {

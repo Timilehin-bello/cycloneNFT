@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 
-//INTERNALIMPORT
 import Style from "./Brief.module.css";
 import images from "../../img";
 

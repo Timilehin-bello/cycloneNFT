@@ -1,4 +1,4 @@
-# Project Title
+# Title
 
 Cyclone NFT MarketPlace
 
@@ -6,9 +6,9 @@ Cyclone NFT MarketPlace
 
 Cyclone NFT MarketPlace is a non-fungible token (NFT) marketplace where users can buy, sell, or create NFTs. It is a noncustodial platform, allowing users full control and access to their cryptocurrency wallets. Users interact directly with other users to buy or sell an NFT or a bundle of NFTs.
 
-# Video shot
+# Snapshot
 
-![Cyclone NFT Pages]()
+![Cyclone NFT Pages](./)
 
 # Link
 
@@ -43,6 +43,18 @@ cd cycloneNFT
 npm install
 ```
 
+**Start Hardhat node**
+
+```javascript
+npx hardhat node
+```
+
+**Run the deploy Script**
+
+```javascript
+npx hardhat run --network localhost ./script/deploy.js
+```
+
 **Start the development server**
 
 ```javascript
@@ -54,6 +66,30 @@ npm run dev
 ```
 http://localhost:3000
 ```
+
+## Metamask Setup
+
+- Ensure you are using the `Mumbai Test Network` on your `metamask wallet` or any other wallet when connecting.
+
+### Polygon Mumbai Network Setup
+
+1. Open metamask and add network.
+2. Network name `Polygon Mumbai Testnet`
+3. New RPC URL `https://polygon-mumbai.g.alchemy.com/v2/KBuX4MEvHnuxz1qVl9Rd-QKqEl0WUVWW`
+4. Chain ID `80001`
+5. Currency symbol `MATIC`
+
+### Localhost Network Setup
+
+1. Open metamask and add network.
+2. Network name `Localhost`
+3. New RPC URL `http://127.0.0.1:8545`
+4. Chain ID `31337`
+5. Currency symbol `ETH`
+
+# The Contract
+
+The smart contract was deployed at:
 
 https://mumbai.polygonscan.com/address/0x76709c7F4948E293b6990951810E95aedf5bA6CA
 
@@ -122,3 +158,24 @@ On the `MUMBAI TESTNET`.
 - `http-proxy-middleware`: It stands between the sender and the recipient and can also modify an incoming request before it's eventual handler receives it.
 
 - `ipfs-http-client`: A JavaScript client for talking to a js-ipfs node.
+
+- `next`: it's a flexible React framework that gives you building blocks to create fast web applications.
+
+- `react`: it implement a render() method that takes input data and returns what to display
+
+- `react-dom`: it provides DOM specific methods that can be used at the top level of a web app to enable an efficient way of managing DOM elements of the web page
+
+- `react-dropzone`: It's an HTML5-compliant React component for handling the dragging and dropping of files.
+
+- `react-icons`: It helps you add icons (from all different icon libraries) to your React apps. It delivers the icons to your app as components so they're easier to work with, and it lets you style them so they're consistent with the overall style of your app.
+
+- `web3modal`: It's an easy-to-use library to help developers add support for multiple providers in their apps with a simple customizable configuration.
+
+## Dev Dependencies
+
+- `@nomicfoundation/hardhat-toolbox`: It bundles all the commonly used packages and Hardhat plugins for development in Hardhat.
+- `hardhat`: A development environment that helps in testing, compiling, deploying, and debugging dApps on the Ethereum blockchain.
+
+# License
+
+This project is licensed under Grandida License - see the LICENSE.md file for details.

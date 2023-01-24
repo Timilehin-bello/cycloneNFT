@@ -82,19 +82,28 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
         </p>
 
         <div className={Style.sideBar_social}>
-          <a href="#">
+          <a
+            href="https://www.facebook.com/profile.php?id=100009096397038"
+            target="_blank"
+          >
             <TiSocialFacebook />
           </a>
-          <a href="#">
+          <a
+            href="https://www.linkedin.com/in/oluwatimilehin-bello/"
+            target="_blank"
+          >
             <TiSocialLinkedin />
           </a>
-          <a href="#">
+          <a href="https://twitter.com/Timmee_Bello" target="_blank">
             <TiSocialTwitter />
           </a>
-          <a href="#">
+          <a
+            href="https://www.youtube.com/channel/UCDyKFRctmBNBRm1o8-MY4hA"
+            target="_blank"
+          >
             <TiSocialYoutube />
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/teemee_bello/" target="_blank">
             <TiSocialInstagram />
           </a>
         </div>

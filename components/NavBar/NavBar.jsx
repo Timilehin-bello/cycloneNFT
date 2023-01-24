@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import Image from "next/image";
+import React, { useState, useContext } from "react";
 import { DiJqueryUiLogo } from "react-icons/di";
 
 import { BsSearch } from "react-icons/bs";
@@ -10,12 +9,10 @@ import Style from "./NavBar.module.css";
 import { LearnMore, SideBar } from "./index";
 import { Button, Error } from "../componentsindex";
 
-//IMPORT FROM SMART CONTRACT
 import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
 import Explore from "./Explore/Explore";
 
 const NavBar = () => {
-  //----USESTATE COMPONNTS
   const [explore, setExplore] = useState(false);
   const [learn, setLearnMore] = useState(false);
 
@@ -45,7 +42,6 @@ const NavBar = () => {
     }
   };
 
-  //SMART CONTRACT SECTION
   const { currentAccount, connectWallet, openError } = useContext(
     NFTMarketplaceContext
   );

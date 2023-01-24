@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Style from "./CreatorTab.module.css";
 import CreatorTabCard from "./CreatorTabCard/CreatorTabCard";
-import images from "../../img";
 
 const CreatorTab = ({ TopCreator }) => {
   return (

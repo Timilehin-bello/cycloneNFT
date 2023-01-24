@@ -4,8 +4,6 @@ import { useRouter } from "next/router";
 import { Brand } from "../components/componentsindex";
 import NFTDetailsPage from "../NFTDetailsPage/NFTDetailsPage";
 
-//IMPORT SMART CONTRACT DATA
-
 const NFTDetails = () => {
   const [nft, setNft] = useState({
     image: "",

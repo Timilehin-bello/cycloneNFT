@@ -54,7 +54,7 @@ const searchPage = () => {
 
   return (
     <div className={Style.searchPage}>
-      <Banner bannerImage={images.creatorbackground2} />
+      <Banner bannerImage={images.creatorbackground1} />
       <SearchBar
         onHandleSearch={onHandleSearch}
         onClearSearch={onClearSearch}

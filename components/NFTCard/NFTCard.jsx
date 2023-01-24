@@ -1,24 +1,12 @@
-import React, { useState, useContext } from "react";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { BsImages } from "react-icons/bs";
+import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import Style from "./NFTCard.module.css";
-import images from "../../img";
 import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
 
 const NFTCard = ({ NFTData }) => {
   const { truncateString } = useContext(NFTMarketplaceContext);
-  const [like, setLike] = useState(true);
-
-  const likeNft = () => {
-    if (!like) {
-      setLike(true);
-    } else {
-      setLike(false);
-    }
-  };
 
   return (
     <div className={Style.NFTCard}>
@@ -35,32 +23,10 @@ const NFTCard = ({ NFTData }) => {
               />
             </div>
 
-            <div className={Style.NFTCard_box_update}>
-              {/* <div className={Style.NFTCard_box_update_left}>
-                <div
-                  className={Style.NFTCard_box_update_left_like}
-                  onClick={() => likeNft()}
-                >
-                  {like ? (
-                    <AiOutlineHeart />
-                  ) : (
-                    <AiFillHeart
-                      className={Style.NFTCard_box_update_left_like_icon}
-                    />
-                  )}
-                </div>
-              </div> */}
-
-              {/* <div className={Style.NFTCard_box_update_right}>
-                <div className={Style.NFTCard_box_update_right_info}></div>
-              </div> */}
-            </div>
-
             <div className={Style.NFTCard_box_update_details}>
               <div className={Style.NFTCard_box_update_details_price}>
                 <div className={Style.NFTCard_box_update_details_price_box}>
                   <h4>
-                    {/* TODO: TRUNCATE */}
                     {truncateString(el.name, 3)} #{el.tokenId}
                   </h4>
 
@@ -81,9 +47,6 @@ const NFTCard = ({ NFTData }) => {
                   </div>
                 </div>
               </div>
-              {/* <div className={Style.NFTCard_box_update_details_category}>
-                <BsImages />
-              </div> */}
             </div>
           </div>
         </Link>

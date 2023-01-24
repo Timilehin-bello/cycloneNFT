@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import Style from "../styles/author.module.css";
-import { Banner, NFTCardTwo } from "../collectionPage/collectionIndex";
-import { Brand, Title } from "../components/componentsindex";
-import CreatorTabCard from "../components/CreatorTab/CreatorTabCard/CreatorTabCard";
+import { Banner } from "../collectionPage/collectionIndex";
+import { Brand } from "../components/componentsindex";
+
 import images from "../img";
 import {
   AuthorProfileCard,
@@ -11,7 +11,6 @@ import {
   AuthorNFTCardBox,
 } from "../authorPage/componentIndex";
 
-//IMPORT SMART CONTRACT DATA
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
 const author = () => {
@@ -21,7 +20,6 @@ const author = () => {
   const [follower, setFollower] = useState(false);
   const [following, setFollowing] = useState(false);
 
-  //IMPORT SMART CONTRACT DATA
   const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(
     NFTMarketplaceContext
   );
@@ -43,7 +41,7 @@ const author = () => {
 
   return (
     <div className={Style.author}>
-      <Banner bannerImage={images.creatorbackground2} />
+      <Banner bannerImage={images.creatorbackground1} />
       <AuthorProfileCard currentAccount={currentAccount} />
       <AuthorTaps
         setcollectables={setcollectables}

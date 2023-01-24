@@ -83,22 +83,6 @@
   gap: 1rem;
 }
 
-.NFTDescription_box_profile_biding_box_timer {
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-}
-
-.NFTDescription_box_profile_biding_box_timer_item p {
-  font-size: 3rem;
-  line-height: 0;
-  font-weight: 900;
-}
-
-.NFTDescription_box_profile_biding_box_timer_item span {
-  font-weight: 600;
-}
-
 .NFTDescription_box_profile_biding_box_price {
   line-height: 0;
   margin-top: 4rem;

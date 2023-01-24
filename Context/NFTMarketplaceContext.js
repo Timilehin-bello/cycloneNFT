@@ -84,7 +84,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const bal = ethers.utils.formatEther(getBalance);
       setAccountBalance(bal);
     } catch (error) {
-      setError("Something wrong while connecting to wallet");
+      setError("Wallet is not connected");
       setOpenError(true);
     }
   };
@@ -160,7 +160,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       await transaction.wait();
       console.log(transaction);
     } catch (error) {
-      setError("error while creating sale");
+      setError("Error while creating sale");
       setOpenError(true);
     }
   };
@@ -173,7 +173,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
       console.log(provider);
       const contract = fetchContract(provider);
-      // const contract = fetchContract(provider);
 
       const data = await contract.fetchMarketItems();
 
@@ -210,7 +209,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
           }
         )
       );
-      console.log(items);
       return items;
     } catch (error) {
       setError("Error while fetching NFTS");
@@ -283,7 +281,8 @@ export const NFTMarketplaceProvider = ({ children }) => {
       await transaction.wait();
       router.push("/author");
     } catch (error) {
-      console.log("Error While buying NFT");
+      setError("Error While buying NFT");
+      setOpenError(true);
     }
   };
 

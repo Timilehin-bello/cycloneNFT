@@ -4,7 +4,6 @@ import Link from "next/link";
 import Style from "./Explore.module.css";
 
 const Explore = () => {
-  //-------- EXPLORE NAVIGATION MENU
   const explore = [
     {
       name: "Author",
