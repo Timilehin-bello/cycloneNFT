@@ -2,13 +2,13 @@ import React from "react";
 import Image from "next/image";
 
 //INTERNALIMPORT
-import Style from "./Video.module.css";
+import Style from "./Brief.module.css";
 import images from "../../img";
 
-const Video = () => {
+const Brief = () => {
   return (
-    <div className={Style.Video}>
-      <div className={Style.Video_box}>
+    <div className={Style.Brief}>
+      <div className={Style.Brief_box}>
         <h1>About Us</h1>
         <p>
           Cyclone strives to be the most trustworthy and secure marketplace for
@@ -16,23 +16,23 @@ const Video = () => {
           priority.
         </p>
 
-        <div className={Style.Video_box_frame}>
-          <div className={Style.Video_box_frame_left}>
+        <div className={Style.Brief_box_frame}>
+          <div className={Style.Brief_box_frame_left}>
             <Image
               src={images.bg_nft}
-              alt="Video image"
+              alt="Brief image"
               width={1920}
               height={1080}
               objectFit="cover"
-              className={Style.Video_box_frame_left_img}
+              className={Style.Brief_box_frame_left_img}
             />
           </div>
 
-          <div className={Style.Video_box_frame_right}></div>
+          <div className={Style.Brief_box_frame_right}></div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Video;
+export default Brief;

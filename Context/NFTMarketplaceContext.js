@@ -56,8 +56,6 @@ const truncateString = (str, number) => {
 };
 
 export const NFTMarketplaceProvider = ({ children }) => {
-  const titleData = "Discover,Collect & Sell Popular";
-
   const [error, setError] = useState("");
   const [openError, setOpenError] = useState(false);
   const [currentAccount, setCurrentAccount] = useState("");
@@ -302,7 +300,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
         buyNFT,
         createSale,
         currentAccount,
-        titleData,
         setOpenError,
         openError,
         error,

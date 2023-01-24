@@ -3,12 +3,10 @@ import Image from "next/image";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 
 import Style from "./NFTDetailsImg.module.css";
-import images from "../../img";
 
 const NFTDetailsImg = ({ nft }) => {
   const [description, setDescription] = useState(true);
   const [details, setDetails] = useState(true);
-  const [like, setLike] = useState(false);
 
   const openDescription = () => {
     if (!description) {
@@ -69,7 +67,9 @@ const NFTDetailsImg = ({ nft }) => {
             <p>
               <small>Contract Address</small>
               <br></br>
-              {nft.seller}
+              {nft.seller.length > 30
+                ? `${nft.seller.slice(0, 35)}....`
+                : nft.seller}
             </p>
             <p>
               <small>Token ID</small>

@@ -46,6 +46,7 @@
   align-self: center;
   gap: 1rem;
   line-height: 1;
+  cursor: pointer;
 }
 
 .NFTDescription_box_profile_box_right_info small,
