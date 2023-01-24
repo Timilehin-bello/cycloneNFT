@@ -6,7 +6,7 @@ Cyclone NFT MarketPlace
 
 Cyclone NFT MarketPlace is a non-fungible token (NFT) marketplace where users can buy, sell, or create NFTs. It is a noncustodial platform, allowing users full control and access to their cryptocurrency wallets. Users interact directly with other users to buy or sell an NFT or a bundle of NFTs.
 
-# Videoshot
+# Video shot
 
 ![Cyclone NFT Pages]()
 
@@ -125,9 +125,4 @@ On the `MUMBAI TESTNET`.
 
 - `ipfs-http-client`: A JavaScript client for talking to a js-ipfs node.
 
-- `next`: This is a zero-dependency package for loading environment variables from a .env file.
-- `react`: This is a zero-dependency package for loading environment variables from a .env file.
-- `react-dom`: This is a zero-dependency package for loading environment variables from a .env file.
-- `react-dropzone`: This is a zero-dependency package for loading environment variables from a .env file.
-- `react-icons`: This is a zero-dependency package for loading environment variables from a .env file.
-- `web3modal`: This is a zero-dependency package for loading environment variables from a .env file.
+
