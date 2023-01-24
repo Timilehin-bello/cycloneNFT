@@ -51,6 +51,9 @@
   margin-bottom: 10rem;
 }
 
+.aboutus_box_hero_right_img {
+  border-radius: 1rem;
+}
 .aboutus_box_founder_box {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -134,7 +137,7 @@
   }
 }
 
-@media screen and (min-width: 445px) and (max-width: 768px) {
+@media screen and (min-width: 338px) and (max-width: 768px) {
   .aboutus_box {
     width: 90%;
   }

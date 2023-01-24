@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-
 import Style from "../styles/index.module.css";
 import {
   LandingPage,

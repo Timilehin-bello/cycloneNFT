@@ -29,7 +29,6 @@ const NFTCard = ({ NFTData }) => {
                   <h4>
                     {truncateString(el.name, 3)} #{el.tokenId}
                   </h4>
-
                   <div
                     className={Style.NFTCard_box_update_details_price_box_box}
                   >
@@ -39,11 +38,6 @@ const NFTCard = ({ NFTData }) => {
                       <small>Price</small>
                       <p>{el.price}ETH</p>
                     </div>
-                    <div
-                      className={
-                        Style.NFTCard_box_update_details_price_box_stock
-                      }
-                    ></div>
                   </div>
                 </div>
               </div>

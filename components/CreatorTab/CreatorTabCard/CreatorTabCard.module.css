@@ -10,6 +10,7 @@
 
 .CreatorTabCard_box:hover {
   box-shadow: var(--box-shadow);
+  transform: scale(1.05);
 }
 
 .CreatorTabCard_rank {
@@ -23,12 +24,12 @@
   padding: 0.1rem 0.5rem;
   border-radius: 2rem;
   border: 1px solid var(--icons-color);
-  transition: all 0.3s ease-in;
+  transition: all 0.6s ease-in;
 }
 
 .CreatorTabCard_rank:hover {
-  background-color: var(--main-bg-color);
-  color: var(--icons-color);
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .CreatorTabCard_box_img {

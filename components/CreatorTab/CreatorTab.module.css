@@ -18,7 +18,7 @@
   margin-bottom: 4rem;
 }
 
-.CreatorTab_tabs_btn {
+/* .CreatorTab_tabs_btn {
   background-color: var(--main-bg-color);
   padding: 0.5rem 1rem;
   border-radius: 4rem;
@@ -28,9 +28,9 @@
   align-items: center;
   font-size: 1.2rem;
   box-shadow: var(--box-shadow);
-}
+} */
 
-.CreatorTab_tabs_btn button {
+/* .CreatorTab_tabs_btn button {
   background-color: var(--icons-color);
   color: var(--main-bg-color);
   padding: 1rem;
@@ -39,7 +39,7 @@
   cursor: pointer;
   border: 1px solid var(--icons-color);
   transition: all 0.3s ease-in;
-}
+} */
 
 .CreatorTab_tabs_btn button:hover {
   background-color: transparent;

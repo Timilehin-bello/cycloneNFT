@@ -10,10 +10,11 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.7.3",
+    "animate.css": "^4.1.1",
     "axios": "^0.27.2",
     "dotenv": "^16.0.3",
     "ether": "^0.0.9",
-    "framer-motion": "^7.2.1",
+    "framer-motion": "^7.10.3",
     "http-proxy-middleware": "^2.0.6",
     "ipfs-http-client": "^58.0.0",
     "next": "12.2.5",

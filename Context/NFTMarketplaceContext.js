@@ -41,7 +41,8 @@ const connectingWithSmartContract = async () => {
     const contract = fetchContract(signer);
     return contract;
   } catch (error) {
-    console.log("Something went wrong while connecting with contract", error);
+    setError("Something went wrong while connecting with contract");
+    setOpenError(true);
   }
 };
 
@@ -76,7 +77,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
       } else {
         setError("No Account Found");
         setOpenError(true);
-        console.log("No Account Found");
       }
 
       const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -98,7 +98,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
         method: "eth_requestAccounts",
       });
 
-      console.log(accounts);
       setCurrentAccount(accounts[0]);
 
       connectingWithSmartContract();
@@ -158,7 +157,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
           });
 
       await transaction.wait();
-      console.log(transaction);
     } catch (error) {
       setError("Error while creating sale");
       setOpenError(true);
@@ -171,7 +169,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
         "https://polygon-mumbai.g.alchemy.com/v2/KBuX4MEvHnuxz1qVl9Rd-QKqEl0WUVWW"
       );
 
-      console.log(provider);
       const contract = fetchContract(provider);
 
       const data = await contract.fetchMarketItems();

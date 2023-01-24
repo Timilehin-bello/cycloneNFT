@@ -7,7 +7,6 @@ const AuthorTaps = ({ setcollectables, setCreated }) => {
 
   const openTab = (e) => {
     const btnText = e.target.innerText;
-    console.log(btnText);
     if (btnText == "Listed NFTs") {
       setcollectables(true);
       setCreated(false);
