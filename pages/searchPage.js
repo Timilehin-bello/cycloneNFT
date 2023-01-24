@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 
-//INTRNAL IMPORT
 import Style from "../styles/searchPage.module.css";
 import { Brand, Loader } from "../components/componentsindex";
 import { SearchBar } from "../SearchPage/searchBarIndex";
@@ -8,20 +7,16 @@ import { SearchBar } from "../SearchPage/searchBarIndex";
 import { NFTCardTwo, Banner } from "../collectionPage/collectionIndex";
 import images from "../img";
 
-//SMART CONTRACT IMPORT
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
 const searchPage = () => {
-  const { fetchNFTs, setError, currentAccount } = useContext(
-    NFTMarketplaceContext
-  );
+  const { fetchNFTs, setError } = useContext(NFTMarketplaceContext);
   const [nfts, setNfts] = useState([]);
   const [nftsCopy, setNftsCopy] = useState([]);
 
   useEffect(() => {
     try {
       fetchNFTs().then((items) => {
-        // TODO: ADDED if
         if (items === undefined) {
           return;
         }
@@ -59,9 +54,9 @@ const searchPage = () => {
         onHandleSearch={onHandleSearch}
         onClearSearch={onClearSearch}
       />
-      {/* <Filter /> */}
+
       {nfts.length == 0 ? <Loader /> : <NFTCardTwo NFTData={nfts} />}
-      {/* <Slider /> */}
+
       <Brand />
     </div>
   );
