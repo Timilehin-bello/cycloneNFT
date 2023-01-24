@@ -55,17 +55,7 @@ npm run dev
 http://localhost:3000
 ```
 
-or any other port available to view it in the browser.
 
-- No required input/output files.
-
-- Ensure you are using the `Mumbai Test Network` on your `metamask wallet` or any other wallet when connecting.
-
-# Explaining the Nika-Crowdfunding-SmartContract
-
-## The Contract
-
-The smart contract was deployed at:
 
 https://mumbai.polygonscan.com/address/0x76709c7F4948E293b6990951810E95aedf5bA6CA
 
