@@ -122,10 +122,3 @@ On the `MUMBAI TESTNET`.
 - `http-proxy-middleware`: It stands between the sender and the recipient and can also modify an incoming request before it's eventual handler receives it.
 
 - `ipfs-http-client`: A JavaScript client for talking to a js-ipfs node.
-
-- `next`: This is a zero-dependency package for loading environment variables from a .env file.
-- `react`: This is a zero-dependency package for loading environment variables from a .env file.
-- `react-dom`: This is a zero-dependency package for loading environment variables from a .env file.
-- `react-dropzone`: This is a zero-dependency package for loading environment variables from a .env file.
-- `react-icons`: This is a zero-dependency package for loading environment variables from a .env file.
-- `web3modal`: This is a zero-dependency package for loading environment variables from a .env file.
