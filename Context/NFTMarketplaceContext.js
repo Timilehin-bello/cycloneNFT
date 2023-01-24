@@ -101,7 +101,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
       console.log(accounts);
       setCurrentAccount(accounts[0]);
 
-      // window.location.reload();
       connectingWithSmartContract();
     } catch (error) {
       setError("Error while connecting to wallet");
