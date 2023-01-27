@@ -11,7 +11,8 @@ import nftsText from "./nftsText.svg";
 import update from "./update.png";
 import earn from "./earn.png";
 import loader from "./loadergif.gif";
-import errorgif from "./error.gif";
+import success from "./success.jpeg";
+import error from "./error.jpeg";
 import upload from "./upload.png";
 import user from "./user.png";
 
@@ -29,7 +30,8 @@ export default {
   service3,
   service4,
   loader,
-  errorgif,
   upload,
   user,
+  success,
+  error,
 };

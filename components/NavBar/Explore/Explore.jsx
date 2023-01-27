@@ -10,12 +10,16 @@ const Explore = () => {
       link: "author",
     },
     {
+      name: "Search",
+      link: "searchPage",
+    },
+    {
       name: "Create NFT",
       link: "uploadNFT",
     },
     {
-      name: "Search",
-      link: "searchPage",
+      name: "Update Listing Price",
+      link: "updateListingPrice",
     },
   ];
   return (

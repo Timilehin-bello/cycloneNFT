@@ -10,6 +10,7 @@ import CreatorTab from "./CreatorTab/CreatorTab";
 import Brand from "./Brand/Brand";
 import Brief from "./Brief/Brief";
 import Loader from "./Loader/Loader";
+import Success from "./Success/Success";
 import Error from "./Error/Error";
 
 export {
@@ -25,5 +26,6 @@ export {
   Brand,
   Brief,
   Loader,
+  Success,
   Error,
 };

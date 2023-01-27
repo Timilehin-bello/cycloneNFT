@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { GrClose } from "react-icons/gr";
@@ -20,20 +20,26 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
   const [openLearnMore, setOpenLearnMore] = useState(false);
 
   const router = useRouter();
+
   const explore = [
-    {
-      name: "Search",
-      link: "searchPage",
-    },
     {
       name: "Author",
       link: "author",
     },
     {
-      name: "Create NFTs",
+      name: "Search",
+      link: "searchPage",
+    },
+    {
+      name: "Create NFT",
       link: "uploadNFT",
     },
+    {
+      name: "Update Listing Price",
+      link: "updateListingPrice",
+    },
   ];
+
   const learnMore = [
     {
       name: "About",
@@ -110,25 +116,23 @@ const SideBar = ({ setOpenSideMenu, currentAccount, connectWallet }) => {
       </div>
 
       <div className={Style.sideBar_nav}>
-        <div>
-          <div
-            className={Style.sideBar_nav_container}
-            onClick={() => openExploreMenu()}
-          >
-            <p>Explore</p>
-            <TiArrowSortedDown />
-          </div>
-
-          {openExplore && (
-            <div className={Style.sideBar_explore}>
-              {explore.map((el, i) => (
-                <p key={i + 1}>
-                  <Link href={{ pathname: `${el.link}` }}>{el.name}</Link>
-                </p>
-              ))}
-            </div>
-          )}
+        <div
+          className={Style.sideBar_nav_container}
+          onClick={() => openExploreMenu()}
+        >
+          <p>Explore</p>
+          <TiArrowSortedDown />
         </div>
+
+        {openExplore && (
+          <div className={Style.sideBar_explore}>
+            {explore.map((el, i) => (
+              <p key={i + 1}>
+                <Link href={{ pathname: `${el.link}` }}>{el.name}</Link>
+              </p>
+            ))}
+          </div>
+        )}
 
         <div>
           <div

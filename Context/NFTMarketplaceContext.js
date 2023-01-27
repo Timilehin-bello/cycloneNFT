@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 import { useRouter } from "next/router";
@@ -42,8 +42,9 @@ const connectingWithSmartContract = async () => {
     const contract = fetchContract(signer);
     return contract;
   } catch (error) {
-    setError("Something went wrong while connecting with contract");
-    setOpenError(true);
+    console.log(
+      `Ran into an error while connecting to Smart Contract ${error}`
+    );
   }
 };
 
@@ -59,16 +60,20 @@ const truncateString = (str, number) => {
 };
 
 export const NFTMarketplaceProvider = ({ children }) => {
+  const [success, setSuccess] = useState("");
+  const [openSuccess, setOpenSuccess] = useState(false);
   const [error, setError] = useState("");
   const [openError, setOpenError] = useState(false);
+  const [newPrice, setNewPrice] = useState("");
   const [currentAccount, setCurrentAccount] = useState("");
   const [accountBalance, setAccountBalance] = useState("");
+
   const router = useRouter();
 
   const ConnectToWallet = async () => {
     try {
       if (!window.ethereum)
-        return setOpenError(true), setError("Install MetaMask");
+        return setOpenError(true), setError("Oops, Install a Wallet");
 
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
@@ -77,13 +82,14 @@ export const NFTMarketplaceProvider = ({ children }) => {
       if (accounts.length) {
         setCurrentAccount(accounts[0]);
       } else {
-        setError("No Account Found");
+        setError("No available account found");
         setOpenError(true);
       }
 
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const getBalance = await provider.getBalance(accounts[0]);
       const bal = ethers.utils.formatEther(getBalance);
+
       setAccountBalance(bal);
     } catch (error) {
       setError("Wallet is not connected");
@@ -101,10 +107,12 @@ export const NFTMarketplaceProvider = ({ children }) => {
       });
 
       setCurrentAccount(accounts[0]);
-
       connectingWithSmartContract();
+
+      setSuccess("Successfully Connected to Wallet");
+      setOpenSuccess(true);
     } catch (error) {
-      setError("Error while connecting to wallet");
+      setError("Error while connecting to Wallet");
       setOpenError(true);
     }
   };
@@ -135,6 +143,8 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
       await createSale(url, price);
 
+      setSuccess("Successfully Created NFT");
+      setOpenSuccess(true);
       router.push("/searchPage");
     } catch (error) {
       console.log(error);
@@ -161,8 +171,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
       await transaction.wait();
     } catch (error) {
-      setError("Error while creating sale");
-      setOpenError(true);
+      console.log(`Error while creating sale!: ${error}`);
     }
   };
 
@@ -209,16 +218,13 @@ export const NFTMarketplaceProvider = ({ children }) => {
           }
         )
       );
+
       return items;
     } catch (error) {
       setError("Error while fetching NFTS");
       setOpenError(true);
     }
   };
-
-  useEffect(() => {
-    fetchNFTs();
-  }, []);
 
   const fetchMyNFTsOrListedNFTs = async (type) => {
     try {
@@ -274,14 +280,42 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const contract = await connectingWithSmartContract();
       const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
 
+      console.log();
       const transaction = await contract.createMarketSale(nft.tokenId, {
         value: price,
       });
 
       await transaction.wait();
+
+      setSuccess(" NFT Purchase Successfull");
+      setOpenSuccess(true);
+
       router.push("/author");
     } catch (error) {
-      setError("Error While buying NFT");
+      setError("Error While Buying NFT");
+      setOpenError(true);
+    }
+  };
+
+  const updateListingPrice = async () => {
+    try {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contractAddress = NFTMarketplaceAddress;
+      const contractABI = NFTMarketplaceABI;
+      const contract = new ethers.Contract(
+        contractAddress,
+        contractABI,
+        signer
+      );
+      const listingPrice = ethers.utils.parseEther(newPrice);
+      await contract.updateListingPrice(listingPrice);
+      setNewPrice("");
+      setSuccess("Listing price updated successfully!!");
+      setOpenSuccess(true);
+    } catch (error) {
+      console.log(error);
+      setError("Only Owner of Marketplace can Update the Listing Price");
       setOpenError(true);
     }
   };
@@ -298,10 +332,17 @@ export const NFTMarketplaceProvider = ({ children }) => {
         buyNFT,
         createSale,
         currentAccount,
+        newPrice,
+        setNewPrice,
+        setCurrentAccount,
+        setOpenSuccess,
+        openSuccess,
+        success,
         setOpenError,
         openError,
         error,
         accountBalance,
+        updateListingPrice,
         truncateString,
       }}
     >

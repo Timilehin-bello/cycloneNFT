@@ -1,13 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { DiJqueryUiLogo } from "react-icons/di";
+
+import Style from "./NavBar.module.css";
+import { LearnMore, SideBar } from "./index";
+import { Button, Error, Success } from "../componentsindex";
 
 import { BsSearch } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
 import { useRouter } from "next/router";
-
-import Style from "./NavBar.module.css";
-import { LearnMore, SideBar } from "./index";
-import { Button, Error } from "../componentsindex";
 
 import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
 import Explore from "./Explore/Explore";
@@ -19,6 +19,20 @@ const NavBar = () => {
   const [openSideMenu, setOpenSideMenu] = useState(false);
 
   const router = useRouter();
+
+  useEffect(() => {
+    // add event listener to detect clicks outside of dropdown
+    const handleClick = (e) => {
+      if (e.target.closest(".dropdown")) return;
+      setExplore(false);
+      setLearnMore(false);
+      setOpenSideMenu(false);
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, []);
 
   const openMenu = (e) => {
     const btnText = e.target.innerText;
@@ -42,7 +56,7 @@ const NavBar = () => {
     }
   };
 
-  const { currentAccount, connectWallet, openError } = useContext(
+  const { currentAccount, connectWallet, openError, openSuccess } = useContext(
     NFTMarketplaceContext
   );
 
@@ -61,29 +75,29 @@ const NavBar = () => {
           </div>
         </div>
 
-        {/* //END OF LEFT SECTION */}
         <div className={Style.navbar_container_right}>
           <div className={Style.navbar_container_right_explore}>
-            {/* Explore MENU */}
-            <p onClick={(e) => openMenu(e)}>Explore</p>
-            {explore && (
-              <div className={Style.navbar_container_right_explore_container}>
-                <Explore />
-              </div>
-            )}
+            <div className="dropdown">
+              <p onClick={(e) => openMenu(e)}>Explore</p>
+              {explore && (
+                <div className={Style.navbar_container_right_explore_container}>
+                  <Explore />
+                </div>
+              )}
+            </div>
           </div>
 
-          {/* Learn More MENU */}
           <div className={Style.navbar_container_right_learn}>
-            <p onClick={(e) => openMenu(e)}>Learn More</p>
-            {learn && (
-              <div className={Style.navbar_container_right_learn_container}>
-                <LearnMore />
-              </div>
-            )}
+            <div className="dropdown">
+              <p onClick={(e) => openMenu(e)}>Learn More</p>
+              {learn && (
+                <div className={Style.navbar_container_right_learn_container}>
+                  <LearnMore />
+                </div>
+              )}
+            </div>
           </div>
 
-          {/* CREATE BUTTON SECTION */}
           <div className={Style.navbar_container_right_button}>
             {currentAccount == "" ? (
               <Button btnName="Connect" handleClick={() => connectWallet()} />
@@ -95,8 +109,6 @@ const NavBar = () => {
             )}
           </div>
 
-          {/* MENU BUTTON */}
-
           <div className={Style.navbar_container_right_menuBtn}>
             <CgMenuRight
               className={Style.menuIcon}
@@ -106,18 +118,19 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* SIDBAR CPMPONENT */}
-      {openSideMenu && (
-        <div className={Style.sideBar}>
-          <SideBar
-            setOpenSideMenu={setOpenSideMenu}
-            currentAccount={currentAccount}
-            connectWallet={connectWallet}
-          />
-        </div>
-      )}
-
+      <div className="dropdown">
+        {openSideMenu && (
+          <div className={Style.sideBar}>
+            <SideBar
+              setOpenSideMenu={setOpenSideMenu}
+              currentAccount={currentAccount}
+              connectWallet={connectWallet}
+            />
+          </div>
+        )}
+      </div>
       {openError && <Error />}
+      {openSuccess && <Success />}
     </div>
   );
 };
