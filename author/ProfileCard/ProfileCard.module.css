@@ -1,10 +1,10 @@
-.AuthorProfileCard {
+.ProfileCard {
   width: 100%;
   z-index: 1;
   margin-top: 5rem;
 }
 
-.AuthorProfileCard_box {
+.ProfileCard_box {
   width: 80%;
   margin: 0 auto;
 
@@ -18,17 +18,17 @@
   gap: 3rem;
 }
 
-.AuthorProfileCard_box_img_img {
+.ProfileCard_box_img_img {
   border-radius: 1rem;
 }
 
-.AuthorProfileCard_box_info h2 {
+.ProfileCard_box_info h2 {
   font-size: 2.5rem;
   line-height: 0;
   margin-top: -0.5rem;
 }
 
-.AuthorProfileCard_box_info_address input {
+.ProfileCard_box_info_address input {
   outline: none;
   width: 35%;
   font-size: 1rem;
@@ -36,30 +36,30 @@
   background-color: transparent;
 }
 
-.AuthorProfileCard_box_info_address_icon {
+.ProfileCard_box_info_address_icon {
   transition: all 0.3s ease-in;
 }
 
-.AuthorProfileCard_box_info_address_icon:hover {
+.ProfileCard_box_info_address_icon:hover {
   box-shadow: var(--box-shadow);
   cursor: pointer;
   color: var(--icons-color);
 }
 
-.AuthorProfileCard_box_info p {
+.ProfileCard_box_info p {
   font-size: 1.1rem;
   line-height: 1;
   width: 90%;
 }
 
-.AuthorProfileCard_box_info_social {
+.ProfileCard_box_info_social {
   display: flex;
   align-items: center;
   gap: 1rem;
   font-size: 1.5rem;
 }
 
-.AuthorProfileCard_box_info_social a {
+.ProfileCard_box_info_social a {
   background-color: var(--icons-color);
   color: var(--main-bg-color);
   border-radius: 50%;
@@ -70,14 +70,14 @@
   cursor: pointer;
 }
 
-.AuthorProfileCard_box_info_social a:hover {
+.ProfileCard_box_info_social a:hover {
   box-shadow: var(--box-shadow);
   background-color: var(--main-bg-color);
   border: 1px solid var(--icons-color);
   color: var(--icons-color);
 }
 
-.AuthorProfileCard_box_share {
+.ProfileCard_box_share {
   display: flex;
   align-items: center;
   align-self: start;
@@ -86,41 +86,41 @@
 }
 
 @media screen and (max-width: 35em) {
-  .AuthorProfileCard_box {
+  .ProfileCard_box {
     width: 90%;
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  .AuthorProfileCard_box_img {
+  .ProfileCard_box_img {
     width: 50%;
   }
 
-  .AuthorProfileCard_box_info h2 {
+  .ProfileCard_box_info h2 {
     font-size: 2rem;
   }
 
-  .AuthorProfileCard_box_info_address input {
+  .ProfileCard_box_info_address input {
     width: 85%;
   }
 
-  .AuthorProfileCard_box_info p {
+  .ProfileCard_box_info p {
     font-size: 1rem;
     line-height: 1.4;
     width: 90%;
   }
-  .AuthorProfileCard_box_info_social {
+  .ProfileCard_box_info_social {
     padding: 0 2rem;
   }
 }
 
 @media screen and (min-device-width: 500px) and (max-device-width: 767px) {
-  .AuthorProfileCard_box {
+  .ProfileCard_box {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 }
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .AuthorProfileCard_box {
+  .ProfileCard_box {
     grid-template-columns: 1fr 2fr;
     gap: 1rem;
   }

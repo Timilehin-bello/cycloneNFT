@@ -6,10 +6,17 @@ async function main() {
 
   await nftMarketplace.deployed();
 
-  console.log(` deployed contract Address ${nftMarketplace.address}`);
+  console.log(`Deployed contract Address ${nftMarketplace.address}`);
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+const runMain = async () => {
+  try {
+    await main();
+    process.exit(0);
+  } catch (err) {
+    console.log(err);
+    process.exit(1);
+  }
+};
+
+runMain();

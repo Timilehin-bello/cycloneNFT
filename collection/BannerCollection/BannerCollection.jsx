@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
-import Style from "./Banner.module.css";
+import Style from "./BannerCollection.module.css";
 
-const Banner = ({ bannerImage }) => {
+const BannerCollection = ({ bannerImage }) => {
   return (
     <div className={Style.banner}>
       <div className={Style.banner_img}>
@@ -29,4 +29,4 @@ const Banner = ({ bannerImage }) => {
   );
 };
 
-export default Banner;
+export default BannerCollection;

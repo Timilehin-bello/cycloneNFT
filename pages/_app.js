@@ -2,7 +2,6 @@ import "animate.css";
 import "../styles/globals.css";
 import { motion, useScroll } from "framer-motion";
 
-//INTRNAL IMPORT
 import { NavBar, Footer } from "../components/componentsindex";
 import { NFTMarketplaceProvider } from "../Context/NFTMarketplaceContext";
 

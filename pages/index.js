@@ -11,14 +11,14 @@ import {
   Brief,
   Loader,
 } from "../components/componentsindex";
-import { getTopCreators } from "../TopCreators/TopCreators";
+import { getCreators } from "../Creators/Creators";
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
 const Home = () => {
-  const { checkIfWalletConnected } = useContext(NFTMarketplaceContext);
+  const { ConnectToWallet } = useContext(NFTMarketplaceContext);
 
   useEffect(() => {
-    checkIfWalletConnected();
+    ConnectToWallet();
   }, []);
 
   const { fetchNFTs } = useContext(NFTMarketplaceContext);
@@ -33,7 +33,7 @@ const Home = () => {
     });
   }, []);
 
-  const creators = getTopCreators(nfts);
+  const creators = getCreators(nfts);
 
   return (
     <div className={Style.homePage}>

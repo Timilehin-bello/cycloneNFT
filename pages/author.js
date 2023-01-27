@@ -1,15 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import Style from "../styles/author.module.css";
-import { Banner } from "../collectionPage/collectionIndex";
+import { BannerCollection } from "../collection/collectionIndex";
 import { Brand } from "../components/componentsindex";
 
 import images from "../img";
-import {
-  AuthorProfileCard,
-  AuthorTaps,
-  AuthorNFTCardBox,
-} from "../authorPage/componentIndex";
+import { ProfileCard, Taps, NFTCardBox } from "../author/componentIndex";
 
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 
@@ -41,9 +37,9 @@ const author = () => {
 
   return (
     <div className={Style.author}>
-      <Banner bannerImage={images.creatorbackground1} />
-      <AuthorProfileCard currentAccount={currentAccount} />
-      <AuthorTaps
+      <BannerCollection bannerImage={images.creatorbackground1} />
+      <ProfileCard currentAccount={currentAccount} />
+      <Taps
         setcollectables={setcollectables}
         setCreated={setCreated}
         setLike={setLike}
@@ -51,7 +47,7 @@ const author = () => {
         setFollowing={setFollowing}
       />
 
-      <AuthorNFTCardBox
+      <NFTCardBox
         collectables={collectables}
         created={created}
         like={like}

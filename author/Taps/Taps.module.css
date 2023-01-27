@@ -1,22 +1,22 @@
-.AuthorTaps {
+.Taps {
   width: 100%;
   margin: 8rem 0 3rem 0;
 }
 
-.AuthorTaps_box {
+.Taps_box {
   width: 80%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
 }
 
-.AuthorTaps_box_left_btn {
+.Taps_box_left_btn {
   display: flex;
   gap: 2rem;
   align-items: center;
 }
 
-.AuthorTaps_box_left_btn button {
+.Taps_box_left_btn button {
   border: 1px solid var(--icons-color);
   outline: 0;
   background-color: var(--main-bg-color);
@@ -28,31 +28,31 @@
   color: var(--icons-color);
 }
 
-.AuthorTaps_box_left_btn .active {
+.Taps_box_left_btn .active {
   border: 1px solid var(--icons-color);
   background-color: var(--icons-color);
   color: var(--main-bg-color);
 }
 
-.AuthorTaps_box_left_btn button:hover {
+.Taps_box_left_btn button:hover {
   border: 1px solid var(--icons-color);
   background-color: var(--icons-color);
   color: var(--main-bg-color);
 }
 
 @media screen and (max-width: 35em) {
-  .AuthorTaps {
+  .Taps {
     margin: 3rem 0 3rem 0;
   }
 
-  .AuthorTaps_box {
+  .Taps_box {
     width: 90%;
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
   }
 
-  .AuthorTaps_box_left_btn {
+  .Taps_box_left_btn {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -64,7 +64,7 @@
 }
 
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .AuthorTaps_box {
+  .Taps_box {
     width: 90%;
     grid-template-columns: 1fr;
     gap: 2rem;

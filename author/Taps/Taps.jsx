@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import Style from "./AuthorTaps.module.css";
+import Style from "./Taps.module.css";
 
-const AuthorTaps = ({ setcollectables, setCreated }) => {
+const Taps = ({ setcollectables, setCreated }) => {
   const [activeBtn, setActiveBtn] = useState(1);
 
   const openTab = (e) => {
@@ -19,10 +19,10 @@ const AuthorTaps = ({ setcollectables, setCreated }) => {
   };
 
   return (
-    <div className={Style.AuthorTaps}>
-      <div className={Style.AuthorTaps_box}>
-        <div className={Style.AuthorTaps_box_left}>
-          <div className={Style.AuthorTaps_box_left_btn}>
+    <div className={Style.Taps}>
+      <div className={Style.Taps_box}>
+        <div className={Style.Taps_box_left}>
+          <div className={Style.Taps_box_left_btn}>
             <button
               className={`${activeBtn == 1 ? Style.active : ""}`}
               onClick={(e) => openTab(e)}
@@ -42,4 +42,4 @@ const AuthorTaps = ({ setcollectables, setCreated }) => {
   );
 };
 
-export default AuthorTaps;
+export default Taps;

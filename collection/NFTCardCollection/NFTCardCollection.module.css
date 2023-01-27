@@ -1,4 +1,4 @@
-.NFTCardTwo {
+.NFTCardCollection {
   width: 80%;
   margin: 0 auto;
 
@@ -8,7 +8,7 @@
   margin-bottom: 14rem;
 }
 
-.NFTCardTwo_box {
+.NFTCardCollection_box {
   display: grid;
   cursor: pointer;
   transition: all 0.3s ease-in;
@@ -16,39 +16,39 @@
   justify-content: center;
 }
 
-.NFTCardTwo_box:hover {
+.NFTCardCollection_box:hover {
   box-shadow: var(--box-shadow);
 }
 
-.NFTCardTwo_box_img {
+.NFTCardCollection_box_img {
   grid-column: 1 / -1;
   grid-row: 1 / -1;
 }
 
-.NFTCardTwo_box_img_img {
+.NFTCardCollection_box_img_img {
   border-radius: 1rem;
 }
 
-.NFTCardTwo_box_info {
+.NFTCardCollection_box_info {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
 }
 
-.NFTCardTwo_box_info_left {
+.NFTCardCollection_box_info_left {
   line-height: 0;
 }
 
-.NFTCardTwo_box_info small {
+.NFTCardCollection_box_info small {
   font-size: 1rem;
 }
 
-.NFTCardTwo_box_info_left p {
+.NFTCardCollection_box_info_left p {
   font-size: 2rem;
   font-weight: 900;
 }
 
-.NFTCardTwo_box_price {
+.NFTCardCollection_box_price {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -56,7 +56,7 @@
   padding: 1rem;
 }
 
-.NFTCardTwo_box_price_box p {
+.NFTCardCollection_box_price_box p {
   border: 1px solid var(--icons-color);
   padding: 1.5rem 1rem 1rem 1rem;
   font-size: 1.4rem;
@@ -64,7 +64,7 @@
   border-radius: 0.3rem;
 }
 
-.NFTCardTwo_box_price_box small {
+.NFTCardCollection_box_price_box small {
   background-color: var(--icons-color);
   color: var(--main-bg-color);
   padding: 0.3rem;
@@ -73,21 +73,21 @@
 }
 
 @media screen and (max-width: 35em) {
-  .NFTCardTwo {
+  .NFTCardCollection {
     width: 90%;
     grid-template-columns: 1fr;
   }
 }
 
 @media screen and (min-width: 561px) and (max-width: 767px) {
-  .NFTCardTwo {
+  .NFTCardCollection {
     width: 90%;
     grid-template-columns: 1fr;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .NFTCardTwo {
+  .NFTCardCollection {
     width: 90%;
     grid-template-columns: repeat(2, 1fr);
   }

@@ -4,7 +4,10 @@ import Style from "../styles/searchPage.module.css";
 import { Brand, Loader } from "../components/componentsindex";
 import { SearchBar } from "../SearchPage/searchBarIndex";
 
-import { NFTCardTwo, Banner } from "../collectionPage/collectionIndex";
+import {
+  NFTCardCollection,
+  BannerCollection,
+} from "../collection/collectionIndex";
 import images from "../img";
 
 import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
@@ -48,13 +51,13 @@ const searchPage = () => {
 
   return (
     <div className={Style.searchPage}>
-      <Banner bannerImage={images.creatorbackground1} />
+      <BannerCollection bannerImage={images.creatorbackground1} />
       <SearchBar
         onHandleSearch={onHandleSearch}
         onClearSearch={onClearSearch}
       />
 
-      {nfts.length == 0 ? <Loader /> : <NFTCardTwo NFTData={nfts} />}
+      {nfts.length == 0 ? <Loader /> : <NFTCardCollection NFTData={nfts} />}
 
       <Brand />
     </div>

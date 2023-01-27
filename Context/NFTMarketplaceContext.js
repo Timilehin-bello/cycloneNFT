@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 import { useRouter } from "next/router";
@@ -31,6 +31,7 @@ const fetchContract = (signerOrProvider) =>
     signerOrProvider
   );
 
+// Connect to SmartContract
 const connectingWithSmartContract = async () => {
   try {
     const web3Modal = new Web3Modal();
@@ -48,6 +49,7 @@ const connectingWithSmartContract = async () => {
 
 export const NFTMarketplaceContext = React.createContext();
 
+// Truncate Strings
 const truncateString = (str, number) => {
   if (str.length > number) {
     return str.slice(0, number) + "...";
@@ -63,7 +65,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
   const [accountBalance, setAccountBalance] = useState("");
   const router = useRouter();
 
-  const checkIfWalletConnected = async () => {
+  const ConnectToWallet = async () => {
     try {
       if (!window.ethereum)
         return setOpenError(true), setError("Install MetaMask");
@@ -135,6 +137,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
       router.push("/searchPage");
     } catch (error) {
+      console.log(error);
       setError("Error while creating NFT");
       setOpenError(true);
     }
@@ -165,9 +168,9 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
   const fetchNFTs = async () => {
     try {
-      const provider = new ethers.providers.JsonRpcProvider(
-        "https://polygon-mumbai.g.alchemy.com/v2/KBuX4MEvHnuxz1qVl9Rd-QKqEl0WUVWW"
-      );
+      const web3Modal = new Web3Modal();
+      const connection = await web3Modal.connect();
+      const provider = new ethers.providers.Web3Provider(connection);
 
       const contract = fetchContract(provider);
 
@@ -286,7 +289,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
   return (
     <NFTMarketplaceContext.Provider
       value={{
-        checkIfWalletConnected,
+        ConnectToWallet,
         connectWallet,
         uploadToIPFS,
         createNFT,

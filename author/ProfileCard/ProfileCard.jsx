@@ -9,10 +9,10 @@ import {
   TiSocialTwitter,
 } from "react-icons/ti";
 
-import Style from "./AuthorProfileCard.module.css";
+import Style from "./ProfileCard.module.css";
 import images from "../../img";
 
-const AuthorProfileCard = ({ currentAccount }) => {
+const ProfileCard = ({ currentAccount }) => {
   const copyAddress = () => {
     const copyText = document.getElementById("myInput");
 
@@ -21,24 +21,24 @@ const AuthorProfileCard = ({ currentAccount }) => {
   };
 
   return (
-    <div className={Style.AuthorProfileCard}>
-      <div className={Style.AuthorProfileCard_box}>
-        <div className={Style.AuthorProfileCard_box_img}>
+    <div className={Style.ProfileCard}>
+      <div className={Style.ProfileCard_box}>
+        <div className={Style.ProfileCard_box_img}>
           <Image
             src={images.nft_image}
-            className={Style.AuthorProfileCard_box_img_img}
+            className={Style.ProfileCard_box_img_img}
             alt="NFT IMAGES"
             width={220}
             height={220}
           />
         </div>
 
-        <div className={Style.AuthorProfileCard_box_info}>
-          <div className={Style.AuthorProfileCard_box_info_address}>
+        <div className={Style.ProfileCard_box_info}>
+          <div className={Style.ProfileCard_box_info_address}>
             <input type="text" defaultValue={currentAccount} id="myInput" />
             <FiCopy
               onClick={() => copyAddress()}
-              className={Style.AuthorProfileCard_box_info_address_icon}
+              className={Style.ProfileCard_box_info_address_icon}
             />
           </div>
 
@@ -47,7 +47,7 @@ const AuthorProfileCard = ({ currentAccount }) => {
             assets.
           </p>
 
-          <div className={Style.AuthorProfileCard_box_info_social}>
+          <div className={Style.ProfileCard_box_info_social}>
             <a
               href="https://www.facebook.com/profile.php?id=100009096397038"
               target="_blank"
@@ -79,4 +79,4 @@ const AuthorProfileCard = ({ currentAccount }) => {
   );
 };
 
-export default AuthorProfileCard;
+export default ProfileCard;

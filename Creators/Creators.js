@@ -1,4 +1,4 @@
-export const getTopCreators = (creators) => {
+export const getCreators = (creators) => {
   const finalCreators = [];
 
   const finalResults = creators.reduce((index, currentValue) => {
