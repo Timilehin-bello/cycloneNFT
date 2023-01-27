@@ -87,7 +87,7 @@ http://localhost:3000
 
 1. Open metamask and add network.
 2. Network name `Polygon Mumbai Testnet`
-3. New RPC URL `https://polygon-mumbai.g.alchemy.com/v2/KBuX4MEvHnuxz1qVl9Rd-QKqEl0WUVWW`
+3. New RPC URL `https://rpc-mumbai.maticvigil.com/`
 4. Chain ID `80001`
 5. Currency symbol `MATIC`
 
