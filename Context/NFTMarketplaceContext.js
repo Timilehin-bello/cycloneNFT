@@ -160,9 +160,8 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const contract = await connectingWithSmartContract();
 
       const listingPrice = await contract.getListingPrice();
-
       const transaction = !isReselling
-        ? await contract.createToken(url, price, {
+        ? await contract.createMarketItemToken(url, price, {
             value: listingPrice.toString(),
           })
         : await contract.resellToken(id, price, {
@@ -182,13 +181,16 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const provider = new ethers.providers.Web3Provider(connection);
 
       const contract = fetchContract(provider);
-
       const data = await contract.fetchMarketItems();
+      console.log("Data", data);
+      console.log("contract", contract);
 
       const items = await Promise.all(
         data.map(
           async ({ tokenId, seller, owner, price: unformattedPrice }) => {
+            console.log("tokenID", tokenId.toNumber());
             const tokenURI = await contract.tokenURI(tokenId);
+            console.log(`it worked`);
 
             const response = await fetch(proxyUrl + tokenURI, {
               headers: {
@@ -292,7 +294,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
       router.push("/author");
     } catch (error) {
-      setError("Error While Buying NFT");
+      setError("Error While uying NFT");
       setOpenError(true);
     }
   };
@@ -301,13 +303,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
-      const contractAddress = NFTMarketplaceAddress;
-      const contractABI = NFTMarketplaceABI;
-      const contract = new ethers.Contract(
-        contractAddress,
-        contractABI,
-        signer
-      );
+      const contract = fetchContract(signer);
       const listingPrice = ethers.utils.parseEther(newPrice);
       await contract.updateListingPrice(listingPrice);
       setNewPrice("");
