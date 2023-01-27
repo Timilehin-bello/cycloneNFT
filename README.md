@@ -137,7 +137,7 @@ On the `MUMBAI TESTNET`.
 
 `getListingPrice`: Returns the listing price of the contract.
 
-`createToken`: Mints a token and lists it in the marketplace.
+`createMarketItemToken`: Mints a token and lists it in the marketplace.
 
 `resellToken`: Allows someone to resell a token they have purchased.
 
@@ -156,6 +156,9 @@ On the `MUMBAI TESTNET`.
 ## Events
 
 `MarketItemCreated`: it stores the market item passed in transaction logs when emitted.
+`MarketItemSold`: it stores the market item that has been sold passed in transaction logs when emitted.
+` MarketItemResold`: it stores the market item that has been resold passed in transaction logs when emitted.
+`MarketItemCreated`: it stores the market item that has been created passed in transaction logs when emitted.
 
 ## Dependencies
 
