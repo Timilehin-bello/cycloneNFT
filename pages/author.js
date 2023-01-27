@@ -12,9 +12,6 @@ import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
 const author = () => {
   const [collectables, setcollectables] = useState(true);
   const [created, setCreated] = useState(false);
-  const [like, setLike] = useState(false);
-  const [follower, setFollower] = useState(false);
-  const [following, setFollowing] = useState(false);
 
   const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(
     NFTMarketplaceContext
@@ -39,20 +36,11 @@ const author = () => {
     <div className={Style.author}>
       <BannerCollection bannerImage={images.creatorbackground1} />
       <ProfileCard currentAccount={currentAccount} />
-      <Taps
-        setcollectables={setcollectables}
-        setCreated={setCreated}
-        setLike={setLike}
-        setFollower={setFollower}
-        setFollowing={setFollowing}
-      />
+      <Taps setcollectables={setcollectables} setCreated={setCreated} />
 
       <NFTCardBox
         collectables={collectables}
         created={created}
-        like={like}
-        follower={follower}
-        following={following}
         nfts={nfts}
         myNFTS={myNFTs}
       />

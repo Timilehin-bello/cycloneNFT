@@ -143,8 +143,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
       await createSale(url, price);
 
-      setSuccess("Successfully Created NFT");
-      setOpenSuccess(true);
       router.push("/searchPage");
     } catch (error) {
       console.log(error);
@@ -175,8 +173,13 @@ export const NFTMarketplaceProvider = ({ children }) => {
           });
 
       await transaction.wait();
+
+      setSuccess("Transaction successfully");
+      setOpenSuccess(true);
     } catch (error) {
       console.log(`Error while creating sale!: ${error}`);
+      setSuccess("Transaction failure");
+      setOpenSuccess(true);
     }
   };
 

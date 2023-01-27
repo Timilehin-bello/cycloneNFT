@@ -23,6 +23,11 @@ Production Link: https://cyclone-nft.vercel.app
 Oluwatimilehin Bello
 Github Link: https://github.com/Timilehin-bello
 
+# Credits
+
+The Cyclone NFT Marketplace of this app was inspired by daulathussain
+(https://github.com/daulathussain/final-NFT-Marketplace-code) some of it's Components and styling were used. Also, the contract from this article (https://betterprogramming.pub/creating-an-nft-marketplace-solidity-2323abca6346) was also used. The contract has been optimized to reduce gas fee, unneccessary function has been removed and the component has been modified accordingly.
+
 # How to Install and Run the Project
 
 **Clone the repository**
@@ -129,7 +134,7 @@ On the `MUMBAI TESTNET`.
 
 `resellToken`: Allows someone to resell a token they have purchased.
 
-`createMarketSale`: Creates the sale of a marketplace item and transfers ownership of the item, as well as funds between parties .
+`createMarketSale`: Creates the sale of a marketplace item and transfers ownership of the item, as well as funds between parties.
 
 `fetchMarketItems`: Returns all unsold market items .
 
