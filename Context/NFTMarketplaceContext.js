@@ -154,12 +154,18 @@ export const NFTMarketplaceProvider = ({ children }) => {
   };
 
   const createSale = async (url, formInputPrice, isReselling, id) => {
+    if (!url || !formInputPrice)
+      return (
+        setError("Please input the price"), setOpenError(true), "Empty input"
+      );
+
     try {
       const price = ethers.utils.parseUnits(formInputPrice, "ether");
 
       const contract = await connectingWithSmartContract();
 
       const listingPrice = await contract.getListingPrice();
+
       const transaction = !isReselling
         ? await contract.createMarketItemToken(url, price, {
             value: listingPrice.toString(),
@@ -182,15 +188,11 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
       const contract = fetchContract(provider);
       const data = await contract.fetchMarketItems();
-      console.log("Data", data);
-      console.log("contract", contract);
 
       const items = await Promise.all(
         data.map(
           async ({ tokenId, seller, owner, price: unformattedPrice }) => {
-            console.log("tokenID", tokenId.toNumber());
             const tokenURI = await contract.tokenURI(tokenId);
-            console.log(`it worked`);
 
             const response = await fetch(proxyUrl + tokenURI, {
               headers: {

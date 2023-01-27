@@ -8,6 +8,7 @@ const Button = ({ btnName, handleClick, icon, classStyle }) => {
       <button
         className={`${Style.button} ${classStyle}`}
         onClick={() => handleClick()}
+        // disabled={!value}
       >
         {icon} {btnName}
       </button>
