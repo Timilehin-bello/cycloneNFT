@@ -1,0 +1,15 @@
+{
+  "31337": {
+    "cycloneNFT": {
+      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+    },
+    "explorerURL": "#"
+  },
+
+  "80001": {
+    "cycloneNFT": {
+      "address": "0x76709c7F4948E293b6990951810E95aedf5bA6CA"
+    },
+    "explorerURL": "https://mumbai.polygonscan.com/"
+  }
+}

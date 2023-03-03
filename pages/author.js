@@ -39,20 +39,11 @@ const author = () => {
     <div className={Style.author}>
       <BannerCollection bannerImage={images.creatorbackground1} />
       <ProfileCard currentAccount={currentAccount} />
-      <Taps
-        setcollectables={setcollectables}
-        setCreated={setCreated}
-        setLike={setLike}
-        setFollower={setFollower}
-        setFollowing={setFollowing}
-      />
+      <Taps setcollectables={setcollectables} setCreated={setCreated} />
 
       <NFTCardBox
         collectables={collectables}
         created={created}
-        like={like}
-        follower={follower}
-        following={following}
         nfts={nfts}
         myNFTS={myNFTs}
       />

@@ -14,7 +14,6 @@ const NFTDescription = ({ nft }) => {
   const router = useRouter();
 
   const { buyNFT, currentAccount } = useContext(NFTMarketplaceContext);
-  const proxyUrl = "https://lit-citadel-42195.herokuapp.com/";
   return (
     <div className={Style.NFTDescription}>
       <div className={Style.NFTDescription_box}>
@@ -61,9 +60,7 @@ const NFTDescription = ({ nft }) => {
                   btnName="List on Marketplace"
                   handleClick={() =>
                     router.push(
-                      `/reSellToken?id=${nft.tokenId}&tokenURI=${
-                        proxyUrl + nft.tokenURI
-                      }&price=${nft.price}`
+                      `/reSellToken?id=${nft.tokenId}&tokenURI=${nft.tokenURI}&price=${nft.price}`
                     )
                   }
                   classStyle={Style.button}
