@@ -12,9 +12,6 @@ import { NFTMarketplaceContext } from "../context/NFTMarketplaceContext";
 const author = () => {
   const [collectables, setcollectables] = useState(true);
   const [created, setCreated] = useState(false);
-  const [like, setLike] = useState(false);
-  const [follower, setFollower] = useState(false);
-  const [following, setFollowing] = useState(false);
 
   const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(
     NFTMarketplaceContext

@@ -177,12 +177,12 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
       await transaction.wait();
 
-      setSuccess("Transaction successfull");
+      setSuccess("Transaction successfully");
       setOpenSuccess(true);
     } catch (error) {
       console.log(`Error while creating sale!: ${error}`);
-      setError("Transaction Error");
-      setOpenError(true);
+      setSuccess("Transaction failure");
+      setOpenSuccess(true);
     }
   };
 

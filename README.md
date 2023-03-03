@@ -6,6 +6,8 @@ Cyclone NFT MarketPlace
 
 Cyclone NFT MarketPlace is a non-fungible token (NFT) marketplace where users can buy, sell, or create NFTs. It is a noncustodial platform, allowing users full control and access to their cryptocurrency wallets. Users interact directly with other users to buy or sell an NFT or a bundle of NFTs.
 
+The problem that Cyclone NFT marketplace solve is the lack of a standardized way to monetize and authenticate digital assets. Before NFTs, digital assets such as art, music, and collectibles could be easily duplicated or copied, making it difficult for creators to prove ownership and monetize their work. With NFTs, creators can assign a unique token to their digital asset, making it one-of-a-kind and easily verifiable as authentic. This allows creators to sell their work as collectibles or unique items, and buyers to own and trade those items as they would physical assets.
+
 # Snapshot
 
 ![Cyclone NFT Pages](./img/cyclone-nft-snapshot.gif)
@@ -23,10 +25,15 @@ Production Link: https://cyclone-nft.vercel.app
 Oluwatimilehin Bello
 Github Link: https://github.com/Timilehin-bello
 
-# Credits
+## Credits
 
 The Cyclone NFT Marketplace of this app was inspired by daulathussain
-(https://github.com/daulathussain/final-NFT-Marketplace-code)some of it's Components and styling were used. Also, the contract from this article (https://betterprogramming.pub/creating-an-nft-marketplace-solidity-2323abca6346) were used. The contract has been optimized to reduce gas fee, unneccessary function has been removed and the component has been modified accordingly.
+(https://github.com/daulathussain/nftMarketplace-Subscription) some of it's Components and styling were used. Also, the contract from this article (https://betterprogramming.pub/creating-an-nft-marketplace-solidity-2323abca6346) was also used. The contract has been optimized to reduce gas fee, unneccessary function has been removed and the component has been modified to work according to my needs.
+
+## !IMPORTANT
+
+My Infura keys has been made available for a while to aid interaction with function.
+It Would be made Unavailable on a later date. It has also been restricted to limit the amount of data that can be uploaded to ipfs to prevent billing.
 
 # How to Install and Run the Project
 
@@ -80,7 +87,7 @@ http://localhost:3000
 
 1. Open metamask and add network.
 2. Network name `Polygon Mumbai Testnet`
-3. New RPC URL `https://polygon-mumbai.g.alchemy.com/v2/KBuX4MEvHnuxz1qVl9Rd-QKqEl0WUVWW`
+3. New RPC URL `https://rpc-mumbai.maticvigil.com/`
 4. Chain ID `80001`
 5. Currency symbol `MATIC`
 
@@ -130,11 +137,11 @@ On the `MUMBAI TESTNET`.
 
 `getListingPrice`: Returns the listing price of the contract.
 
-`createToken`: Mints a token and lists it in the marketplace.
+`createMarketItemToken`: Mints a token and lists it in the marketplace.
 
 `resellToken`: Allows someone to resell a token they have purchased.
 
-`createMarketSale`: Creates the sale of a marketplace item and transfers ownership of the item, as well as funds between parties .
+`createMarketSale`: Creates the sale of a marketplace item and transfers ownership of the item, as well as funds between parties.
 
 `fetchMarketItems`: Returns all unsold market items .
 
@@ -149,6 +156,9 @@ On the `MUMBAI TESTNET`.
 ## Events
 
 `MarketItemCreated`: it stores the market item passed in transaction logs when emitted.
+`MarketItemSold`: it stores the market item that has been sold passed in transaction logs when emitted.
+` MarketItemResold`: it stores the market item that has been resold passed in transaction logs when emitted.
+`MarketItemCreated`: it stores the market item that has been created passed in transaction logs when emitted.
 
 ## Dependencies
 
