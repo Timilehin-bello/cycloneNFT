@@ -135,8 +135,16 @@ export const NFTMarketplaceProvider = ({ children }) => {
   };
 
   const createNFT = async (name, price, image, description, router) => {
+    const connectNetwork = await checkWalletNetwork();
+
     if (!name || !description || !price || !image)
       return setError("Data Is Missing"), setOpenError(true);
+
+    if (!connectNetwork)
+      return (
+        setError("Please connect to either Mumbai or Goerli Network"),
+        setOpenError(true)
+      );
 
     const data = JSON.stringify({ name, description, image });
 
@@ -230,6 +238,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       );
       console.log("working...", items);
 
+      setOpenError(false);
       return items;
     } catch (error) {
       console.log(error);

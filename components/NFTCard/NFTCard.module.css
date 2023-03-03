@@ -44,7 +44,7 @@
   grid-column: 1 /-1;
   grid-row: 3 / -1;
   line-height: 0;
-  z-index: 1;
+  /* z-index: 1; */
   align-items: flex-end;
 
   display: grid;
