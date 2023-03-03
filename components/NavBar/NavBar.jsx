@@ -30,14 +30,15 @@ const NavBar = () => {
     };
 
     // Reload page when network changes
-    if (window?.ethereum) {
-      window.ethereum.on("chainChanged", () => {
-        window.location.reload();
-      });
-      window.ethereum.on("accountsChanged", () => {
-        window.location.reload();
-      });
-    }
+
+    window.ethereum.on("chainChanged", () => {
+      window.location.reload();
+    });
+
+    // Reload page when address changes
+    window.ethereum.on("accountsChanged", () => {
+      window.location.reload();
+    });
 
     document.addEventListener("mousedown", handleClick);
     return () => {

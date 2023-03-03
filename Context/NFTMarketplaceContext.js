@@ -56,7 +56,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
   const [openError, setOpenError] = useState(false);
   const [newPrice, setNewPrice] = useState("");
   const [currentAccount, setCurrentAccount] = useState("");
-  const [accountBalance, setAccountBalance] = useState("");
 
   const router = useRouter();
 
@@ -75,12 +74,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
         setError("No available account found");
         setOpenError(true);
       }
-
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const getBalance = await provider.getBalance(accounts[0]);
-      const bal = ethers.utils.formatEther(getBalance);
-
-      setAccountBalance(bal);
     } catch (error) {
       setError("Wallet is not connected");
       setOpenError(true);
@@ -359,7 +352,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
         setOpenError,
         openError,
         error,
-        accountBalance,
         updateListingPrice,
         truncateString,
       }}

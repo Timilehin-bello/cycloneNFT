@@ -28,11 +28,19 @@ const NFTDescription = ({ nft }) => {
           <div className={Style.NFTDescription_box_profile_box}>
             <div className={Style.NFTDescription_box_profile_box_left}>
               <div className={Style.NFTDescription_box_profile_box_left_info}>
-                <Link href={{ pathname: "/author", query: `${nft.seller}` }}>
+                {currentAccount == nft.seller?.toLowerCase() ? (
+                  <Link href={{ pathname: "/author", query: `${nft.seller}` }}>
+                    <span>
+                      Click to view your NFTs
+                      <MdVerified />
+                    </span>
+                  </Link>
+                ) : (
                   <span>
-                    Click to view Creator <MdVerified />
+                    Seller: {nft.seller?.toLowerCase().slice(0, 5)}...
+                    {nft.seller?.toLowerCase().slice(38, 42)} <MdVerified />
                   </span>
-                </Link>
+                )}
               </div>
             </div>
 
