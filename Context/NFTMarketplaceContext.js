@@ -1,30 +1,11 @@
-import React, { useEffect, useState } from "react";
-import config from "./config.json";
-import NFT_ABI from "./NFTMarketplace.json";
+import React, { useState } from "react";
+import config from "../config/config.json";
+import NFT_ABI from "../config/NFTMarketplace.json";
 import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 import { useRouter } from "next/router";
-import { create } from "ipfs-http-client";
 import axios from "axios";
-
-const projectId = "2KHfZsYP1zBOVsSZZYx4VJ9qzR0";
-const projectSecretKey = "355244ba91064d11370befe1297ef660";
-const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
-  "base64"
-)}`;
-
-const subdomain = "https://cyclone-nft-marketplace.infura-ipfs.io";
-
-const client = create({
-  host: "infura-ipfs.io",
-  port: 5001,
-  protocol: "https",
-  headers: {
-    authorization: auth,
-  },
-});
-
-// import { NFTMarketplaceAddress, NFTMarketplaceABI } from "./constants";
+import { subdomain, client } from "./ipfsConfig";
 
 const fetchContract = async (signerOrProvider) => {
   const web3Modal = new Web3Modal();
@@ -106,6 +87,20 @@ export const NFTMarketplaceProvider = ({ children }) => {
     }
   };
 
+  const checkWalletNetwork = async () => {
+    const web3Modal = new Web3Modal();
+    const connection = await web3Modal.connect();
+    const provider = new ethers.providers.Web3Provider(connection);
+
+    const { chainId } = await provider.getNetwork();
+
+    if (chainId === 31337 || chainId === 80001 || chainId === 5) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const connectWallet = async () => {
     try {
       if (!window.ethereum)
@@ -131,8 +126,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const added = await client.add({ content: file });
 
       const url = `${subdomain}/ipfs/${added.path}`;
-      console.log(added);
-      console.log(url);
+
       return url;
     } catch (error) {
       setError("Error Uploading to IPFS");
@@ -146,18 +140,10 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
     const data = JSON.stringify({ name, description, image });
 
-    console.log(data);
-
     try {
       const added = await client.add(data);
-      console.log("added", added);
-      const url = `${subdomain}/ipfs/${added.path}`;
-      // const urla = `https://infura-ipfs.io/ipfs/${added.path}`;
-      // const urlb = `https://ipfs.infura.io/ipfs/${added.path}`;
 
-      // console.log("URL", url);
-      // console.log("URL1", url);
-      // console.log("URL2", urla);
+      const url = `${subdomain}/ipfs/${added.path}`;
 
       await createSale(url, price);
 
@@ -206,12 +192,16 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const connection = await web3Modal.connect();
       const provider = new ethers.providers.Web3Provider(connection);
 
-      const { chainId } = await provider.getNetwork();
-      console.log(chainId);
+      const connectNetwork = await checkWalletNetwork();
+
+      if (!connectNetwork)
+        return (
+          setError("Please connect to either Mumbai or Goerli Network"),
+          setOpenError(true)
+        );
 
       const contract = await fetchContract(provider);
       const data = await contract.fetchMarketItems();
-
       const items = await Promise.all(
         data.map(
           async ({ tokenId, seller, owner, price: unformattedPrice }) => {
@@ -250,6 +240,14 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
   const fetchMyNFTsOrListedNFTs = async (type) => {
     try {
+      const connectNetwork = await checkWalletNetwork();
+
+      if (!connectNetwork)
+        return (
+          setError("Please connect to either Mumbai or Goerli Network"),
+          setOpenError(true)
+        );
+
       const contract = await connectingWithSmartContract();
 
       const data =
@@ -286,6 +284,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       );
       return items;
     } catch (error) {
+      console.log(error);
       setError("Error while fetching listed NFTs");
       setOpenError(true);
     }
@@ -308,7 +307,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
       router.push("/author");
     } catch (error) {
-      setError("Error While uying NFT");
+      setError("Error While buying NFT");
       setOpenError(true);
     }
   };

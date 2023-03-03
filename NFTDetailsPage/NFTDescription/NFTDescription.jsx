@@ -8,7 +8,7 @@ import { FaWallet } from "react-icons/fa";
 import Style from "./NFTDescription.module.css";
 import { Button } from "../../components/componentsindex.js";
 
-import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
+import { NFTMarketplaceContext } from "../../context/NFTMarketplaceContext";
 
 const NFTDescription = ({ nft }) => {
   const router = useRouter();

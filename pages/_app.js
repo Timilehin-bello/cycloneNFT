@@ -3,7 +3,7 @@ import "../styles/globals.css";
 import { motion, useScroll } from "framer-motion";
 
 import { NavBar, Footer } from "../components/componentsindex";
-import { NFTMarketplaceProvider } from "../Context/NFTMarketplaceContext";
+import { NFTMarketplaceProvider } from "../context/NFTMarketplaceContext";
 
 const MyApp = ({ Component, pageProps }) => {
   const { scrollYProgress } = useScroll();

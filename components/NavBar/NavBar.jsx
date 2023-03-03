@@ -9,7 +9,7 @@ import { BsSearch } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
 import { useRouter } from "next/router";
 
-import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
+import { NFTMarketplaceContext } from "../../context/NFTMarketplaceContext";
 import Explore from "./Explore/Explore";
 
 const NavBar = () => {
@@ -28,6 +28,17 @@ const NavBar = () => {
       setLearnMore(false);
       setOpenSideMenu(false);
     };
+
+    // Reload page when network changes
+    if (window?.ethereum) {
+      window.ethereum.on("chainChanged", () => {
+        window.location.reload();
+      });
+      window.ethereum.on("accountsChanged", () => {
+        window.location.reload();
+      });
+    }
+
     document.addEventListener("mousedown", handleClick);
     return () => {
       document.removeEventListener("mousedown", handleClick);

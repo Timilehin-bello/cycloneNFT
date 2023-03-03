@@ -4,7 +4,7 @@ import Image from "next/image";
 import Style from "./Success.module.css";
 import images from "../../img";
 
-import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
+import { NFTMarketplaceContext } from "../../context/NFTMarketplaceContext";
 
 const Success = () => {
   const { success, setOpenSuccess } = useContext(NFTMarketplaceContext);

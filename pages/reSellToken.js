@@ -7,7 +7,7 @@ import Style from "../styles/reSellToken.module.css";
 import formStyle from "../styles/Form.module.css";
 import { Button } from "../components/componentsindex";
 
-import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
+import { NFTMarketplaceContext } from "../context/NFTMarketplaceContext";
 
 const reSellToken = () => {
   const { createSale } = useContext(NFTMarketplaceContext);

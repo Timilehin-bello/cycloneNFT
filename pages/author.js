@@ -7,7 +7,7 @@ import { Brand } from "../components/componentsindex";
 import images from "../img";
 import { ProfileCard, Taps, NFTCardBox } from "../author/componentIndex";
 
-import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
+import { NFTMarketplaceContext } from "../context/NFTMarketplaceContext";
 
 const author = () => {
   const [collectables, setcollectables] = useState(true);

@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import Style from "../styles/upload-nft.module.css";
 import { UploadNFT } from "../UploadNFT/uploadNFTIndex";
 
-import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
+import { NFTMarketplaceContext } from "../context/NFTMarketplaceContext";
 
 const uploadNFT = () => {
   const { uploadToIPFS, createNFT } = useContext(NFTMarketplaceContext);

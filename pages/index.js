@@ -12,7 +12,7 @@ import {
   Loader,
 } from "../components/componentsindex";
 import { getCreators } from "../Creators/Creators";
-import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
+import { NFTMarketplaceContext } from "../context/NFTMarketplaceContext";
 
 const Home = () => {
   const { ConnectToWallet } = useContext(NFTMarketplaceContext);
@@ -26,6 +26,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchNFTs().then((items) => {
+      console.log(items);
       if (items == undefined) {
         return;
       }
