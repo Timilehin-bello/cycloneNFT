@@ -64,7 +64,13 @@ npx hardhat node
 **Run the deploy Script**
 
 ```javascript
-npx hardhat run --network localhost ./script/deploy.js
+npx hardhat run --network localhost ./scripts/deploy.js
+```
+
+**Run the seed Script**
+
+```javascript
+npx hardhat run --network localhost ./scripts/seed-nfts.js
 ```
 
 **Start the development server**
@@ -81,7 +87,7 @@ http://localhost:3000
 
 ## Metamask Setup
 
-- Ensure you are using the `Mumbai Test Network` on your `metamask wallet` or any other wallet when connecting.
+- Ensure you are using the `Mumbai Test Network` or `Goerli Test Network` on your `metamask wallet`.
 
 ### Polygon Mumbai Network Setup
 
@@ -103,12 +109,12 @@ http://localhost:3000
 
 The smart contract was deployed at:
 
-https://mumbai.polygonscan.com/address/0x76709c7F4948E293b6990951810E95aedf5bA6CA
+https://mumbai.polygonscan.com/address/0xEc888ea9Fd9ea5D5c666E9c33D71D38AD7B29eE5
 
 With this address:
 
 ```
-0x76709c7F4948E293b6990951810E95aedf5bA6CA
+0xEc888ea9Fd9ea5D5c666E9c33D71D38AD7B29eE5
 ```
 
 On the `MUMBAI TESTNET`.
