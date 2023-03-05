@@ -18,7 +18,7 @@ const Home = () => {
   const { ConnectToWallet } = useContext(NFTMarketplaceContext);
 
   useEffect(() => {
-    ConnectToWallet();
+    // ConnectToWallet();
   }, []);
 
   const { fetchNFTs } = useContext(NFTMarketplaceContext);

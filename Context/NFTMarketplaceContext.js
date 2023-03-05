@@ -54,7 +54,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
   const [openSuccess, setOpenSuccess] = useState(false);
   const [error, setError] = useState("");
   const [openError, setOpenError] = useState(false);
-  const [newPrice, setNewPrice] = useState("");
   const [currentAccount, setCurrentAccount] = useState("");
 
   const router = useRouter();
@@ -71,7 +70,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       if (accounts.length) {
         setCurrentAccount(accounts[0]);
       } else {
-        setError("No available account found");
+        setError("Please connect to your account");
         setOpenError(true);
       }
     } catch (error) {
@@ -234,7 +233,8 @@ export const NFTMarketplaceProvider = ({ children }) => {
       setOpenError(false);
       return items;
     } catch (error) {
-      console.log(error);
+      console.log("Log", error);
+      // console.error("Error", error);
       setError("Error while fetching NFTS");
       setOpenError(true);
     }
@@ -314,14 +314,20 @@ export const NFTMarketplaceProvider = ({ children }) => {
     }
   };
 
-  const updateListingPrice = async () => {
+  const updateListingPrice = async (newPrice) => {
+    console.log(currentAccount);
+    if (!newPrice) return setError("Input Is Missing"), setOpenError(true);
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
-      const contract = fetchContract(signer);
+      const contract = await fetchContract(signer);
+      const value = await contract.symbol();
+
+      console.log(value);
+      console.log(contract);
+
       const listingPrice = ethers.utils.parseEther(newPrice);
       await contract.updateListingPrice(listingPrice);
-      setNewPrice("");
       setSuccess("Listing price updated successfully!!");
       setOpenSuccess(true);
     } catch (error) {
@@ -343,8 +349,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
         buyNFT,
         createSale,
         currentAccount,
-        newPrice,
-        setNewPrice,
         setCurrentAccount,
         setOpenSuccess,
         openSuccess,

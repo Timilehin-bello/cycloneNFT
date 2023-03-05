@@ -85,17 +85,13 @@ npm run dev
 http://localhost:3000
 ```
 
+### !!IMPORTANT
+
+- Ensure you're connected to your localhost network provided by hardhat, the network setup is below
+
 ## Metamask Setup
 
-- Ensure you are using the `Mumbai Test Network` or `Goerli Test Network` on your `metamask wallet`.
-
-### Polygon Mumbai Network Setup
-
-1. Open metamask and add network.
-2. Network name `Polygon Mumbai Testnet`
-3. New RPC URL `https://rpc-mumbai.maticvigil.com/`
-4. Chain ID `80001`
-5. Currency symbol `MATIC`
+- To Interact with the deploy [live link](https://cyclone-nft.vercel.app/) ensure you are using the `Mumbai Test Network` or `Goerli Test Network` on your `metamask wallet`.
 
 ### Localhost Network Setup
 
@@ -104,6 +100,14 @@ http://localhost:3000
 3. New RPC URL `http://127.0.0.1:8545`
 4. Chain ID `31337`
 5. Currency symbol `ETH`
+
+### Polygon Mumbai Network Setup
+
+1. Open metamask and add network.
+2. Network name `Polygon Mumbai Testnet`
+3. New RPC URL `https://rpc-mumbai.maticvigil.com/`
+4. Chain ID `80001`
+5. Currency symbol `MATIC`
 
 # The Contract
 
