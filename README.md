@@ -37,17 +37,27 @@ It Would be made Unavailable on a later date. It has also been restricted to lim
 
 # How to Install and Run the Project
 
+
 **Clone the repository**
 
 ```javascript
 git clone https://github.com/Timilehin-bello/cycloneNFT.git
 ```
 
+
 **cd into the Client Folder**
 
 ```bash
 cd cycloneNFT
 ```
+
+
+**Delete package-lock.json**
+
+```bash
+rm package-lock.json
+```
+
 
 **Install the dependencies**
 
