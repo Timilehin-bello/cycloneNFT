@@ -228,13 +228,12 @@ export const NFTMarketplaceProvider = ({ children }) => {
           }
         )
       );
-      console.log("working...", items);
+      // console.log("working...", items);
 
       setOpenError(false);
       return items;
     } catch (error) {
       console.log("Log", error);
-      // console.error("Error", error);
       setError("Error while fetching NFTS");
       setOpenError(true);
     }
@@ -315,7 +314,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
   };
 
   const updateListingPrice = async (newPrice) => {
-    console.log(currentAccount);
     if (!newPrice) return setError("Input Is Missing"), setOpenError(true);
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -324,7 +322,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const value = await contract.symbol();
 
       console.log(value);
-      console.log(contract);
 
       const listingPrice = ethers.utils.parseEther(newPrice);
       await contract.updateListingPrice(listingPrice);

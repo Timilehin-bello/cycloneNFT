@@ -23,7 +23,6 @@ async function main() {
 
   //   Give tokens to accounts[1]
   const creator = accounts[0];
-  const seller = accounts[1];
 
   // Create NFTs
   let transaction;

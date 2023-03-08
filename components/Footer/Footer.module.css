@@ -1,13 +1,12 @@
-.footer_container_social_logo {
-  font-size: 5rem;
-}
-
 .footer {
   width: 100%;
   padding-block: 1.5rem;
   position: relative;
 }
 
+.footer_container_social_logo {
+  font-size: 5rem;
+}
 .footer_container {
   width: 80%;
   margin: 0 auto;

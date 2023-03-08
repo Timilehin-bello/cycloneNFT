@@ -15,18 +15,11 @@ import { getCreators } from "../Creators/Creators";
 import { NFTMarketplaceContext } from "../context/NFTMarketplaceContext";
 
 const Home = () => {
-  const { ConnectToWallet } = useContext(NFTMarketplaceContext);
-
-  useEffect(() => {
-    // ConnectToWallet();
-  }, []);
-
   const { fetchNFTs } = useContext(NFTMarketplaceContext);
   const [nfts, setNfts] = useState([]);
 
   useEffect(() => {
     fetchNFTs().then((items) => {
-      console.log(items);
       if (items == undefined) {
         return;
       }

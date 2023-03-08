@@ -19,6 +19,17 @@ const NavBar = () => {
   const [openSideMenu, setOpenSideMenu] = useState(false);
 
   const router = useRouter();
+  const {
+    currentAccount,
+    connectWallet,
+    openError,
+    openSuccess,
+    ConnectToWallet,
+  } = useContext(NFTMarketplaceContext);
+
+  useEffect(() => {
+    ConnectToWallet();
+  });
 
   useEffect(() => {
     // add event listener to detect clicks outside of dropdown
@@ -67,10 +78,6 @@ const NavBar = () => {
       setOpenSideMenu(false);
     }
   };
-
-  const { currentAccount, connectWallet, openError, openSuccess } = useContext(
-    NFTMarketplaceContext
-  );
 
   return (
     <div className={Style.navbar}>

@@ -1,6 +1,10 @@
 const hre = require("hardhat");
 
 async function main() {
+  // Fetch  network
+  const { chainId } = await ethers.provider.getNetwork();
+  console.log("Using chainId:", chainId);
+
   const NFTMarketplace = await hre.ethers.getContractFactory("NFTMarketplace");
   const nftMarketplace = await NFTMarketplace.deploy();
 
