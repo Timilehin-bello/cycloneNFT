@@ -61,11 +61,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
   const ConnectToWallet = async () => {
     try {
       if (!window.ethereum)
-        return (
-          setOpenError(true),
-          setError("Please, Install a Wallet"),
-          console.log("Wallet")
-        );
+        return setOpenError(true), setError("Please, Install a Wallet");
 
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
