@@ -40,8 +40,9 @@ const NavBar = () => {
       setOpenSideMenu(false);
     };
 
-    // Reload page when network changes
+    if (!window.ethereum) return;
 
+    // Reload page when network changes
     window.ethereum.on("chainChanged", () => {
       window.location.reload();
     });
