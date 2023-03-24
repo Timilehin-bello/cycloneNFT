@@ -210,4 +210,4 @@ On the `MUMBAI TESTNET`.
 
 # License
 
-This project is licensed under Grandida License - see the LICENSE.md file for details.
+This project is licensed under MIT
